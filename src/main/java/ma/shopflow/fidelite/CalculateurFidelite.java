@@ -8,15 +8,17 @@ import java.math.RoundingMode;
  */
 public class CalculateurFidelite {
 
+    private static final BigDecimal MONTANT_PAR_POINT = BigDecimal.TEN;
+
     public int points(BigDecimal montant) {
-        return montant.divide(BigDecimal.TEN, 0, RoundingMode.DOWN).intValueExact();
+        return points(montant, NiveauFidelite.STANDARD);
     }
 
     public int points(BigDecimal montant, NiveauFidelite niveau) {
-        int points = montant.divide(BigDecimal.TEN, 0, RoundingMode.DOWN).intValueExact();
-        if (niveau == NiveauFidelite.GOLD) {
-            return points * 2;
-        }
-        return points;
+        return pointsDeBase(montant) * niveau.multiplicateur();
+    }
+
+    private int pointsDeBase(BigDecimal montant) {
+        return montant.divide(MONTANT_PAR_POINT, 0, RoundingMode.DOWN).intValueExact();
     }
 }
