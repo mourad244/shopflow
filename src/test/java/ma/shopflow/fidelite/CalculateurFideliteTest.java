@@ -47,4 +47,15 @@ class CalculateurFideliteTest {
                 .isThrownBy(() -> calculateur.points(new BigDecimal("-20.00")))
                 .withMessage("Le montant ne peut pas être négatif");
     }
+
+    @ParameterizedTest(name = "{0} DH en {1} -> {2} points")
+    @CsvSource({
+            "6000.00, STANDARD, 500",
+            "2400.00, GOLD,     480",
+            "3000.00, GOLD,     500"
+    })
+    @DisplayName("F3 : les points sont plafonnés à 500 par commande, après le multiplicateur")
+    void lesPointsSontPlafonnes(String montant, NiveauFidelite niveau, int pointsAttendus) {
+        assertThat(calculateur.points(new BigDecimal(montant), niveau)).isEqualTo(pointsAttendus);
+    }
 }
