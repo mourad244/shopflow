@@ -1,6 +1,7 @@
 package ma.shopflow.fidelite;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 import java.math.BigDecimal;
 
@@ -37,5 +38,13 @@ class CalculateurFideliteTest {
     @DisplayName("F2 : un client GOLD gagne deux fois plus de points")
     void unClientGoldGagneDeuxFoisPlusDePoints() {
         assertThat(calculateur.points(new BigDecimal("250.00"), NiveauFidelite.GOLD)).isEqualTo(50);
+    }
+
+    @Test
+    @DisplayName("F4 : un montant négatif est refusé")
+    void unMontantNegatifEstRefuse() {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> calculateur.points(new BigDecimal("-20.00")))
+                .withMessage("Le montant ne peut pas être négatif");
     }
 }
