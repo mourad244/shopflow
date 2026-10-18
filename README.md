@@ -52,6 +52,7 @@ test qui simule une panne d'e-mail. La commande reste confirmée et le test pass
 | `src/test/java/ma/shopflow/fidelite/` | `CalculateurFideliteTest` |
 | `ANOMALIES.md` | Les 2 anomalies du TP1 et les 2 du TP2 |
 | `TDD.md` | Journal des vrais cycles rouge/vert/refactor |
+| `validation/tdd/` | Sorties Maven originales des étapes TDD |
 
 Le `pom.xml` reprend les versions du sujet : JUnit 5.14.4, Mockito 5.23.0,
 AssertJ 3.27.7, Surefire 3.5.6 et Dependency Plugin 3.11.0.

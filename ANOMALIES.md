@@ -166,4 +166,5 @@ Le message `WARNING` contenant « Serveur SMTP injoignable » lors du test de C6
 est attendu : il confirme que la panne a été simulée et journalisée.
 
 Commande de reproduction : `./tester.sh -Dtest=ServiceCommandeTest test`.
-La version finale avec les 11 cas de fidélité doit afficher **42 tests au vert**.
+Après intégration des 11 cas de fidélité, le lancement complet a confirmé
+**42 tests exécutés, 0 échec, 0 erreur et 0 test ignoré**.

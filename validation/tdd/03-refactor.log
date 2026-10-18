@@ -1,0 +1,42 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< ma.shopflow:shopflow >------------------------
+[INFO] Building ShopFlow 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.11.0:properties (default) @ shopflow ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ shopflow ---
+[INFO] skip non existing resourceDirectory /tmp/shopflow-tp2-fidelite.hgSty8/projet/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ shopflow ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 7 source files with javac [debug release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ shopflow ---
+[INFO] skip non existing resourceDirectory /tmp/shopflow-tp2-fidelite.hgSty8/projet/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ shopflow ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ shopflow ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running Points de fidélité
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.195 s -- in Points de fidélité
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.133 s
+[INFO] Finished at: 2026-10-18T11:46:27+01:00
+[INFO] ------------------------------------------------------------------------
