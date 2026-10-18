@@ -18,7 +18,7 @@ public class CalculateurFidelite {
         if (montant.signum() < 0) {
             throw new IllegalArgumentException("Le montant ne peut pas être négatif");
         }
-        return pointsDeBase(montant) * niveau.multiplicateur();
+        return Math.min(pointsDeBase(montant) * niveau.multiplicateur(), 500);
     }
 
     private int pointsDeBase(BigDecimal montant) {
