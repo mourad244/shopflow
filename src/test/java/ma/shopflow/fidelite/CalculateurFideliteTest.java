@@ -32,4 +32,10 @@ class CalculateurFideliteTest {
     void unPointParTrancheEntiereDeDixDirhams(String montant, int pointsAttendus) {
         assertThat(calculateur.points(new BigDecimal(montant))).isEqualTo(pointsAttendus);
     }
+
+    @Test
+    @DisplayName("F2 : un client GOLD gagne deux fois plus de points")
+    void unClientGoldGagneDeuxFoisPlusDePoints() {
+        assertThat(calculateur.points(new BigDecimal("250.00"), NiveauFidelite.GOLD)).isEqualTo(50);
+    }
 }
