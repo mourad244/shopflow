@@ -1,0 +1,1673 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< ma.shopflow:shopflow >------------------------
+[INFO] Building ShopFlow 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ shopflow ---
+[INFO] Deleting /home/mourad/git_workspace/shopflow-tp3/target
+[INFO] 
+[INFO] --- dependency:3.10.0:properties (default) @ shopflow ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ shopflow ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ shopflow ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 35 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ shopflow ---
+[INFO] skip non existing resourceDirectory /home/mourad/git_workspace/shopflow-tp3/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ shopflow ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 9 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ shopflow ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running API des commandes
+11:42:35.965 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ma.shopflow.api.CommandeApiTest]: CommandeApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:42:36.141 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ma.shopflow.ShopflowApplication for test class ma.shopflow.api.CommandeApiTest
+11:42:36.222 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [ma.shopflow.api.CommandeApiTest]: CommandeApiTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:42:36.234 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration ma.shopflow.ShopflowApplication for test class ma.shopflow.api.CommandeApiTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+11:42:36 INFO  CommandeApiTest              : Starting CommandeApiTest using Java 21.0.9 with PID 146594 (started by mourad in /home/mourad/git_workspace/shopflow-tp3)
+11:42:36 INFO  CommandeApiTest              : No active profile set, falling back to 1 default profile: "default"
+11:42:36 DEBUG SpringApplication            : Loading source class ma.shopflow.ShopflowApplication
+11:42:36 DEBUG GenericWebApplicationContext : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@ca93621
+11:42:37 DEBUG ConnectionDetailsRegistrar   : Registering 'jdbcContainerConnectionDetailsForPostgres' for @ServiceConnection source for Bean 'postgres' defined in class path resource [ma/shopflow/TestcontainersConfiguration.class]
+11:42:37 DEBUG ConnectionDetailsRegistrar   : Registering 'flywayContainerConnectionDetailsForPostgres' for @ServiceConnection source for Bean 'postgres' defined in class path resource [ma/shopflow/TestcontainersConfiguration.class]
+11:42:37 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:42:37 DEBUG AutoConfigurationPackages    : @EnableAutoConfiguration was declared on a class in the package 'ma.shopflow'. Automatic @Repository and @Entity scanning is enabled.
+11:42:37 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+11:42:38 INFO  PullPolicy                   : Image pull policy will be performed by: DefaultPullPolicy()
+11:42:38 INFO  ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+11:42:38 INFO  DockerClientFactory          : Testcontainers version: 2.0.5
+11:42:38 INFO  DockerClientProviderStrategy : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+11:42:38 INFO  DockerClientProviderStrategy : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+11:42:38 INFO  DockerClientFactory          : Docker host IP address is localhost
+11:42:38 INFO  DockerClientFactory          : Connected to docker: 
+  Server Version: 29.9.2
+  API Version: 1.56
+  Operating System: Ubuntu 24.04.5 LTS
+  Total Memory: 31794 MB
+11:42:38 INFO  0                            : Creating container for image: testcontainers/ryuk:0.14.0
+11:42:38 INFO  RegistryAuthLocator          : Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.14.0, configFile: /home/mourad/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/mourad/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
+11:42:39 INFO  0                            : Container testcontainers/ryuk:0.14.0 is starting: 31377d4c5a61b6b45356797a718f0d779bc1c13a8c99b6cc7e3817ca4b344603
+11:42:39 INFO  0                            : Container testcontainers/ryuk:0.14.0 started in PT0.525789456S
+11:42:39 INFO  RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+11:42:39 INFO  DockerClientFactory          : Checking the system...
+11:42:39 INFO  DockerClientFactory          : ✔︎ Docker server version should be at least 1.6.0
+11:42:39 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+11:42:39 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 0fc63761e70ec94c212f112a6bbcd467696b5820eeaf558c7e61f13503064b45
+11:42:41 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT1.589310764S
+11:42:41 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32775/test?loggerLevel=OFF)
+11:42:41 DEBUG rsLifecycleBeanPostProcessor : Initialized and started startable beans '[postgres]'
+11:42:41 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32775/test?loggerLevel=OFF (PostgreSQL 17.11)
+11:42:41 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+11:42:41 INFO  DbValidate                   : Successfully validated 3 migrations (execution time 00:00.022s)
+11:42:41 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+11:42:41 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+11:42:41 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+11:42:41 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+11:42:41 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+11:42:41 INFO  DbMigrate                    : Successfully applied 3 migrations to schema "public", now at version v3 (execution time 00:00.036s)
+11:42:41 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+11:42:41 INFO  core                         : HHH000001: Hibernate ORM core version 7.4.5.Final
+11:42:42 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+11:42:42 INFO  HikariDataSource             : HikariPool-1 - Starting...
+11:42:42 INFO  HikariPool                   : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1f8ac459
+11:42:42 INFO  HikariDataSource             : HikariPool-1 - Start completed.
+11:42:42 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32775/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+11:42:43 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11:42:43 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:42:43 INFO  QueryEnhancerFactories       : Hibernate is in classpath; If applicable, HQL parser will be used.
+11:42:44 DEBUG RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+11:42:44 DEBUG SimpleUrlHandlerMapping      : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+11:42:44 DEBUG RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+11:42:44 DEBUG tionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+11:42:44 DEBUG rvletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+11:42:44 DEBUG rvletContextInitializerBeans : Mapping servlets: 
+11:42:44 DEBUG deredCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
+11:42:44 DEBUG OrderedFormContentFilter     : Filter 'formContentFilter' configured for use
+11:42:44 DEBUG OrderedRequestContextFilter  : Filter 'requestContextFilter' configured for use
+11:42:44 INFO  SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+11:42:44 INFO  TestDispatcherServlet        : Initializing Servlet ''
+11:42:44 INFO  TestDispatcherServlet        : Completed initialization in 2 ms
+11:42:44 DEBUG ditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   AopAutoConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.auto=true) matched (OnPropertyCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration matched:
+      - @ConditionalOnClass found required class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   ApplicationAvailabilityAutoConfiguration#applicationAvailability matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.availability.ApplicationAvailability; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataJpaRepositoriesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceConfiguration.Hikari matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+      - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceInitializationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+      - SQL InitializationDatabase Initialization default value is EMBEDDED (OnSqlInitializationCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.sql.autoconfigure.init.ApplicationScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   DataWebAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.data.web.PageableHandlerMethodArgumentResolver', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.PageableHandlerMethodArgumentResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataWebAutoConfiguration#pageableCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.config.PageableHandlerMethodArgumentResolverCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataWebAutoConfiguration#sortCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.config.SortHandlerMethodArgumentResolverCustomizer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataWebAutoConfiguration#springDataWebSettings matched:
+      - @ConditionalOnMissingBean (types: org.springframework.data.web.config.SpringDataWebSettings; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DispatcherServletAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.servlet.ServletRegistration' (OnClassCondition)
+      - Default DispatcherServlet did not find dispatcher servlet beans (DispatcherServletAutoConfiguration.DefaultDispatcherServletCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.servlet.ServletRegistration' (OnClassCondition)
+      - DispatcherServlet Registration did not find servlet registration bean (DispatcherServletAutoConfiguration.DispatcherServletRegistrationCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration#dispatcherServletRegistration matched:
+      - @ConditionalOnBean (names: dispatcherServlet types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet' (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found bean 'dispatcherServlet'; @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.autoconfigure.error.ErrorViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.web.error.whitelabel.enabled=true) matched (OnPropertyCondition)
+      - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.flyway.enabled=true) matched (OnPropertyCondition)
+      - AnyNestedCondition 2 matched 1 did not; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.FlywayUrlCondition @ConditionalOnProperty (spring.flyway.url) did not find property 'spring.flyway.url'; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.JdbcConnectionDetailsCondition @ConditionalOnBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) found bean 'jdbcContainerConnectionDetailsForPostgres'; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.DataSourceBeanCondition @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource' (FlywayAutoConfiguration.FlywayDataSourceCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.support.JdbcUtils' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.flywaydb.core.Flyway; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration#flywayInitializer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.PostgresqlConfiguration matched:
+      - @ConditionalOnClass found required class 'org.flywaydb.database.postgresql.PostgreSQLConfigurationExtension' (OnClassCondition)
+
+   HibernateJpaAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'jakarta.persistence.EntityManager', 'org.hibernate.engine.spi.SessionImplementor' (OnClassCondition)
+
+   HibernateJpaConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   HttpEncodingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.filter.CharacterEncodingFilter' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBooleanProperty (spring.servlet.encoding.enabled=true) matched (OnPropertyCondition)
+
+   HttpEncodingAutoConfiguration#characterEncodingFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.CharacterEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter' (OnClassCondition)
+      - NoneNestedConditions 0 matched 1 did not; NestedCondition on HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition.ReactiveWebApplication did not find reactive web application classes (HttpMessageConvertersAutoConfiguration.NotReactiveWebApplicationCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConvertersCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration#jacksonJsonMapper matched:
+      - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration#jsonFactory matched:
+      - @ConditionalOnMissingBean (types: tools.jackson.core.json.JsonFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration#jsonMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: tools.jackson.databind.json.JsonMapper$Builder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JsonProblemDetailsConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.ProblemDetail' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'tools.jackson.databind.json.JsonMapper' (OnClassCondition)
+      - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: tools.jackson.databind.json.JsonMapper; SearchStrategy: all) found bean 'jacksonJsonMapper' (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration#jacksonJsonHttpMessageConvertersCustomizer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter ignored: org.springframework.hateoas.server.mvc.TypeConstrainedJacksonJsonHttpMessageConverter,org.springframework.data.rest.webmvc.alps.AlpsJacksonJsonHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcClientAutoConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactoryBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#jpaVendorAdapter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#transactionManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration#persistenceManagedTypes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.persistenceunit.PersistenceManagedTypes; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JtaAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.transaction.Transaction' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.jta.enabled=true) matched (OnPropertyCondition)
+
+   LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
+      - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+
+   MockMvcConfiguration#mockMvc matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvc; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcConfiguration#mockMvcBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvcBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcTesterConfiguration matched:
+      - @ConditionalOnClass found required class 'org.assertj.core.api.Assert' (OnClassCondition)
+
+   MockMvcTesterConfiguration#mockMvcTester matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.assertj.MockMvcTester; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MultipartAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.multipart.support.StandardServletMultipartResolver', 'jakarta.servlet.MultipartConfigElement' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBooleanProperty (spring.servlet.multipart.enabled=true) matched (OnPropertyCondition)
+
+   MultipartAutoConfiguration#multipartConfigElement matched:
+      - @ConditionalOnMissingBean (types: jakarta.servlet.MultipartConfigElement; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MultipartAutoConfiguration#multipartResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor' (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor matched:
+      - @ConditionalOnBooleanProperty (spring.persistence.exceptiontranslation.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   SslAutoConfiguration#sslBundleRegistry matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.ssl.SslBundleRegistry,org.springframework.boot.ssl.SslBundles; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor' (OnClassCondition)
+
+   TaskExecutorConfigurations.AsyncConfigurerConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ModelCondition @ConditionalOnProperty (spring.task.execution.mode=force) did not find property 'spring.task.execution.mode'; NestedCondition on TaskExecutorConfigurations.OnExecutorCondition.ExecutorBeanCondition @ConditionalOnMissingBean (types: java.util.concurrent.Executor; SearchStrategy: all) did not find any beans (TaskExecutorConfigurations.OnExecutorCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutor matched:
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskExecutorConfigurations.ThreadPoolTaskExecutorBuilderConfiguration#threadPoolTaskExecutorBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskExecutorBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TaskSchedulingAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler' (OnClassCondition)
+
+   TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+      - @ConditionalOnThreading found PLATFORM (OnThreadingCondition)
+
+   TaskSchedulingConfigurations.ThreadPoolTaskSchedulerBuilderConfiguration#threadPoolTaskSchedulerBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.task.ThreadPoolTaskSchedulerBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TestcontainersPropertySourceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.test.context.DynamicPropertyRegistry' (OnClassCondition)
+
+   TomcatServletWebServerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'jakarta.servlet.ServletRequest', 'org.apache.catalina.startup.Tomcat', 'org.apache.coyote.UpgradeProtocol', 'org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   TomcatServletWebServerAutoConfiguration#tomcatServletWebServerFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.server.servlet.ServletWebServerFactory; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionManagerCustomizationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration#platformTransactionManagerCustomizers matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.transaction.autoconfigure.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.validation.executable.ExecutableValidator' (OnClassCondition)
+      - @ConditionalOnResource found location classpath:META-INF/services/jakarta.validation.spi.ValidationProvider (OnResourceCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: jakarta.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#methodValidationPostProcessor matched:
+      - @ConditionalOnMissingBean (types: org.springframework.validation.beanvalidation.MethodValidationPostProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#formContentFilter matched:
+      - @ConditionalOnBooleanProperty (spring.mvc.formcontent.filter.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+      - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+      - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#viewNameTranslator matched:
+      - @ConditionalOnMissingBean (names: viewNameTranslator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.ProblemDetailsErrorHandlingConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.mvc.problemdetails.enabled=true) matched (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ProblemDetailsErrorHandlingConfiguration#problemDetailsExceptionHandler matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   AopAutoConfiguration.AspectJAutoProxyingConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+   AopAutoConfiguration.ClassProxyingConfiguration:
+      Did not match:
+         - @ConditionalOnMissingClass found unwanted class 'org.aspectj.weaver.Advice' (OnClassCondition)
+
+   DataJpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+      Did not match:
+         - @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) did not find property 'spring.data.jpa.repositories.bootstrap-mode' (OnPropertyCondition)
+
+   DataRepositoryMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean did not find required type 'io.micrometer.core.instrument.MeterRegistry' (OnBeanCondition)
+
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+      Did not match:
+         - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) found beans of type 'org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails' jdbcContainerConnectionDetailsForPostgres (OnBeanCondition)
+
+   DataSourceCheckpointRestoreConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+   DataSourceConfiguration.Dbcp2:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourceConfiguration.Generic:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+   DataSourceConfiguration.OracleUcp:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourceConfiguration.Tomcat:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceHealthContributorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.health.autoconfigure.contributor.ConditionalOnEnabledHealthIndicator' (OnClassCondition)
+
+   DataSourceJmxConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) found different value in property 'spring.jmx.enabled' (OnPropertyCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourcePoolMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' transactionManager (OnBeanCondition)
+
+   DispatcherServletAutoConfiguration.DispatcherServletConfiguration#multipartResolver:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans of type org.springframework.web.multipart.MultipartResolver (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration#flywayConnectionDetails:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.flyway.autoconfigure.FlywayConnectionDetails; SearchStrategy: all) found beans of type 'org.springframework.boot.flyway.autoconfigure.FlywayConnectionDetails' flywayContainerConnectionDetailsForPostgres (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.OracleConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.database.oracle.OracleConfigurationExtension' (OnClassCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.SqlServerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.database.sqlserver.SQLServerConfigurationExtension' (OnClassCondition)
+
+   FlywayEndpointAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   HibernateMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
+
+   Jackson2HttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.databind.ObjectMapper' (OnClassCondition)
+
+   Jackson2HttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration.CborConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.cbor.CBORMapper' (OnClassCondition)
+
+   JacksonAutoConfiguration.XmlConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.JacksonXmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'tools.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JmxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) found different value in property 'spring.jmx.enabled' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
+
+   JndiDataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'spring.datasource.jndi-name' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+   JndiJtaConfiguration:
+      Did not match:
+         - @ConditionalOnJndi JNDI environment is not available (OnJndiCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.transaction.jta.JtaTransactionManager' (OnClassCondition)
+
+   JpaBaseConfiguration.JpaWebConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.jpa.open-in-view=true) found different value in property 'spring.jpa.open-in-view' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
+
+   KotlinSerializationHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'kotlinx.serialization.Serializable', 'kotlinx.serialization.json.Json' (OnClassCondition)
+
+   LazyConnectionDataSourceConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.connection-fetch=lazy) did not find property 'spring.datasource.connection-fetch' (OnPropertyCondition)
+
+   MessageSourceAutoConfiguration:
+      Did not match:
+         - ResourceBundle did not find bundle with basename messages (MessageSourceAutoConfiguration.ResourceBundleCondition)
+
+   MockMvcAutoConfiguration#dispatcherServlet:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.DispatcherServlet' dispatcherServlet (OnBeanCondition)
+
+   MockMvcAutoConfiguration#dispatcherServletPath:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.webmvc.autoconfigure.DispatcherServletPath; SearchStrategy: all) found beans of type 'org.springframework.boot.webmvc.autoconfigure.DispatcherServletPath' dispatcherServletRegistration (OnBeanCondition)
+
+   MockMvcWebClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.htmlunit.WebClient' (OnClassCondition)
+
+   MockMvcWebDriverAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.openqa.selenium.htmlunit.HtmlUnitDriver' (OnClassCondition)
+
+   ProjectInfoAutoConfiguration#buildProperties:
+      Did not match:
+         - @ConditionalOnResource did not find resource '${spring.info.build.location:classpath:META-INF/build-info.properties}' (OnResourceCondition)
+
+   ProjectInfoAutoConfiguration#gitProperties:
+      Did not match:
+         - GitResource did not find git info at classpath:git.properties (ProjectInfoAutoConfiguration.GitResourceAvailableCondition)
+
+   ServletHttpExchangesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean did not find required type 'org.springframework.boot.actuate.web.exchanges.HttpExchangeRepository' (OnBeanCondition)
+
+   ServletManagementContextAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties' (OnClassCondition)
+
+   ServletMappingsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+   ServletWebServerConfiguration#forwardedHeaderFilter:
+      Did not match:
+         - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+
+   SpringApplicationAdminJmxAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.application.admin.enabled=true) did not find property 'spring.application.admin.enabled' (OnPropertyCondition)
+
+   TaskExecutorConfigurations.AsyncConfigurerWrapperConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.scheduling.annotation.AsyncConfigurer; SearchStrategy: all) did not find any beans of type org.springframework.scheduling.annotation.AsyncConfigurer (OnBeanCondition)
+
+   TaskExecutorConfigurations.SimpleAsyncTaskExecutorBuilderConfiguration#simpleAsyncTaskExecutorBuilderVirtualThreads:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskExecutorBuilder' simpleAsyncTaskExecutorBuilder (OnBeanCondition)
+
+   TaskExecutorConfigurations.TaskExecutorConfiguration#applicationTaskExecutorVirtualThreads:
+      Did not match:
+         - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
+
+   TaskExecutorConfigurations.TaskExecutorContextPropagationConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.context.ContextSnapshot' (OnClassCondition)
+
+   TaskSchedulingAutoConfiguration#scheduledBeanLazyInitializationExcludeFilter:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.scheduling.config.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   TaskSchedulingConfigurations.SimpleAsyncTaskSchedulerBuilderConfiguration#simpleAsyncTaskSchedulerBuilderVirtualThreads:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder; SearchStrategy: all) found beans of type 'org.springframework.boot.task.SimpleAsyncTaskSchedulerBuilder' simpleAsyncTaskSchedulerBuilder (OnBeanCondition)
+
+   TaskSchedulingConfigurations.TaskSchedulerConfiguration:
+      Did not match:
+         - @ConditionalOnBean (names: org.springframework.scheduling.config.internalScheduledAnnotationProcessor; SearchStrategy: all) did not find any beans named org.springframework.scheduling.config.internalScheduledAnnotationProcessor (OnBeanCondition)
+
+   TestcontainersPropertySourceAutoConfiguration#dynamicPropertyRegistrarBeanInitializer:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.test.context.support.DynamicPropertyRegistrarBeanInitializer; SearchStrategy: all) found beans of type 'org.springframework.test.context.support.DynamicPropertyRegistrarBeanInitializer' org.springframework.test.context.support.internalDynamicPropertyRegistrarBeanInitializer (OnBeanCondition)
+
+   TomcatMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.binder.tomcat.TomcatMetrics' (OnClassCondition)
+
+   TomcatReactiveManagementContextAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+
+   TomcatReactiveWebServerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnWebApplication did not find reactive web application classes (OnWebApplicationCondition)
+
+   TomcatServletManagementContextAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.web.server.ManagementContextFactory' (OnClassCondition)
+
+   TomcatServletWebServerAutoConfiguration#tomcatForwardedHeaderFilterCustomizer:
+      Did not match:
+         - @ConditionalOnProperty (server.forward-headers-strategy=framework) did not find property 'server.forward-headers-strategy' (OnPropertyCondition)
+
+   TomcatWebServerConfiguration:
+      Did not match:
+         - Application is deployed as a WAR file. (OnWarDeploymentCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.mvc.hiddenmethod.filter.enabled=true) did not find property 'spring.mvc.hiddenmethod.filter.enabled' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarVersionLocator (OnEnabledResourceChainCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+   WebMvcHealthEndpointExtensionAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.health.actuate.endpoint.HealthEndpoint' (OnClassCondition)
+
+   WebMvcMappingsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint' (OnClassCondition)
+
+   WebMvcObservationAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.micrometer.observation.autoconfigure.ObservationProperties' (OnClassCondition)
+
+   XADataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.boot.jdbc.XADataSourceWrapper; SearchStrategy: all) did not find any beans of type org.springframework.boot.jdbc.XADataSourceWrapper (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'jakarta.transaction.TransactionManager', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration
+
+    org.springframework.boot.autoconfigure.ssl.SslAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration
+
+    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration
+
+    org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfiguration
+
+    org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration
+
+    org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration
+
+
+
+11:42:44 INFO  CommandeApiTest              : Started CommandeApiTest in 8.023 seconds (process running for 9.293)
+11:42:44 DEBUG ApplicationAvailabilityBean  : Application availability state LivenessState changed to CORRECT
+11:42:44 DEBUG ApplicationAvailabilityBean  : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 40 where reference = 'SOUR-02']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 5 where reference = 'PORT-06']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 0 where reference = 'CASQ-05']
+11:42:44 DEBUG RequestMappingHandlerMapping : Mapped to ma.shopflow.api.CommandeController#passer(DemandeCommande)
+11:42:44 DEBUG tResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [DemandeCommande[clientId=C-001, email=amina@exemple.ma, lignes=[Ligne[reference=SOUR-02, quantite=2] (truncated)...]
+11:42:44 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:44 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:44 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:44 DEBUG SQL                          : select ce1_0.id,ce1_0.client_id,ce1_0.reference_paiement,ce1_0.statut,ce1_0.total,l1_0.commande_id,l1_0.prix_unitaire,l1_0.quantite,l1_0.reference from commande ce1_0 left join ligne_commande l1_0 on ce1_0.id=l1_0.commande_id where ce1_0.id=?
+11:42:44 DEBUG SQL                          : insert into commande (client_id,reference_paiement,statut,total,id) values (?,?,?,?,?)
+11:42:44 DEBUG SQL                          : insert into ligne_commande (commande_id,prix_unitaire,quantite,reference) values (?,?,?,?)
+11:42:44 DEBUG HttpEntityMethodProcessor    : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+11:42:44 DEBUG HttpEntityMethodProcessor    : Writing [CommandeCreee[id=9a435b06-5fc1-4473-b349-05fef8b552d8, statut=CONFIRMEE, total=270.00, referencePaie (truncated)...]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select client_id from commande where id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select statut from commande where id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select total from commande where id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select reference_paiement from commande where id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select reference from ligne_commande where commande_id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select quantite from ligne_commande where commande_id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select prix_unitaire from ligne_commande where commande_id = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 40 where reference = 'SOUR-02']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 5 where reference = 'PORT-06']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 0 where reference = 'CASQ-05']
+11:42:44 DEBUG RequestMappingHandlerMapping : Mapped to ma.shopflow.api.CommandeController#passer(DemandeCommande)
+11:42:44 DEBUG tResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [DemandeCommande[clientId=C-001, email=pas-un-email, lignes=[Ligne[reference=SOUR-02, quantite=0]]]]
+11:42:44 DEBUG tionHandlerExceptionResolver : Using @ExceptionHandler org.springframework.boot.webmvc.autoconfigure.ProblemDetailsExceptionHandler#handleException(Exception, WebRequest)
+11:42:44 DEBUG HttpEntityMethodProcessor    : Using 'application/problem+json', given [*/*] and supported [application/problem+json]
+11:42:44 DEBUG HttpEntityMethodProcessor    : Writing [ProblemDetail[type='null', title='Bad Request', status=400, detail='Invalid request content.', insta (truncated)...]
+11:42:44 DEBUG tionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<ma.shopflow.api.CommandeCreee> ma.shopflow.api.CommandeController.passer(ma.shopflow.api.DemandeCommande) with 2 errors: [Field error in object 'demandeCommande' on field 'lignes[0].quantite': rejected value [0]; codes [Min.demandeCommande.lignes[0].quantite,Min.demandeCommande.lignes.quantite,Min.lignes[0].quantite,Min.lignes.quantite,Min.quantite,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [demandeCommande.lignes[0].quantite,lignes[0].quantite]; arguments []; default message [lignes[0].quantite],1]; default message [must be greater than or equal to 1]] [Field error in object 'demandeCommande' on field 'email': rejected value [pas-un-email]; codes [Email.demandeCommande.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [demandeCommande.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@2177809a,.*]; default message [must be a well-formed email address]] ]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 40 where reference = 'SOUR-02']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 5 where reference = 'PORT-06']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 0 where reference = 'CASQ-05']
+11:42:44 DEBUG RequestMappingHandlerMapping : Mapped to ma.shopflow.api.CommandeController#passer(DemandeCommande)
+11:42:44 DEBUG tResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [DemandeCommande[clientId=C-001, email=amina@exemple.ma, lignes=[Ligne[reference=CASQ-05, quantite=1] (truncated)...]
+11:42:44 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:44 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:44 DEBUG tionHandlerExceptionResolver : Using @ExceptionHandler ma.shopflow.api.ErreursApi#rupture(RuptureDeStockException)
+11:42:44 DEBUG HttpEntityMethodProcessor    : Using 'application/problem+json', given [*/*] and supported [application/problem+json]
+11:42:44 DEBUG HttpEntityMethodProcessor    : Writing [ProblemDetail[type='null', title='Conflict', status=409, detail='Produit indisponible : CASQ-05', in (truncated)...]
+11:42:44 DEBUG tionHandlerExceptionResolver : Resolved [ma.shopflow.commande.RuptureDeStockException: Produit indisponible : CASQ-05]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from ligne_commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [delete from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 40 where reference = 'SOUR-02']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 5 where reference = 'PORT-06']
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL update [update produit set stock = 0 where reference = 'CASQ-05']
+11:42:44 DEBUG RequestMappingHandlerMapping : Mapped to ma.shopflow.api.CommandeController#passer(DemandeCommande)
+11:42:44 DEBUG tResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [DemandeCommande[clientId=C-001, email=amina@exemple.ma, lignes=[Ligne[reference=PORT-06, quantite=2] (truncated)...]
+11:42:44 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:44 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:44 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:44 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock+?) where pe1_0.reference=?
+11:42:44 DEBUG tionHandlerExceptionResolver : Using @ExceptionHandler ma.shopflow.api.ErreursApi#paiementRefuse(PaiementRefuseException)
+11:42:44 DEBUG HttpEntityMethodProcessor    : Using 'application/problem+json', given [*/*] and supported [application/problem+json]
+11:42:44 DEBUG HttpEntityMethodProcessor    : Writing [ProblemDetail[type='null', title='Payment Required', status=402, detail='Paiement refusé : Plafond d (truncated)...]
+11:42:44 DEBUG tionHandlerExceptionResolver : Resolved [ma.shopflow.commande.PaiementRefuseException: Paiement refusé : Plafond de la carte dépassé]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL query
+11:42:44 DEBUG JdbcTemplate                 : Executing prepared SQL statement [select stock from produit where reference = ?]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from commande]
+11:42:44 DEBUG JdbcTemplate                 : Executing SQL query [select count(*) from ligne_commande]
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.203 s -- in API des commandes
+[INFO] Running Code promo
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s -- in Code promo
+[INFO] Running Panier ShopFlow
+[INFO] Running R1 à R3 : ajout de produits
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in R1 à R3 : ajout de produits
+[INFO] Running R5 : frais de livraison
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s -- in R5 : frais de livraison
+[INFO] Running R6 et R7 : remise et total
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in R6 et R7 : remise et total
+[INFO] Running R4 : sous-total
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in R4 : sous-total
+[INFO] Running R8 : code promo
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in R8 : code promo
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s -- in Panier ShopFlow
+[INFO] Running Points de fidélité
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in Points de fidélité
+[INFO] Running Catalogue PostgreSQL
+11:42:45 INFO  tionConfigContextLoaderUtils : Could not detect default configuration classes for test class [ma.shopflow.catalogue.ProduitJpaRepositoryTest]: ProduitJpaRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:42:45 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [ProduitJpaRepositoryTest]: [ImportsContextCustomizerFactory, PropertyMappingContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory, WebDriverContextCustomizerFactory, SpringBootTestRandomPortContextCustomizerFactory, ServiceConnectionContextCustomizerFactory]
+11:42:45 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizers for test class [ProduitJpaRepositoryTest]: [ImportsContextCustomizer, PropertyMappingContextCustomizer, ExcludeFilterContextCustomizer, TypeExcludeFiltersContextCustomizer, DuplicateJsonObjectContextCustomizer, OnFailureConditionReportContextCustomizer, DisableAutoConfigurationContextCustomizer, DynamicPropertiesContextCustomizer, WebDriverContextCustomizer, SpringBootTestRandomPortContextCustomizer, ServiceConnectionContextCustomizer]
+11:42:45 INFO  gBootTestContextBootstrapper : Found @SpringBootConfiguration ma.shopflow.ShopflowApplication for test class ma.shopflow.catalogue.ProduitJpaRepositoryTest
+11:42:45 INFO  tionConfigContextLoaderUtils : Could not detect default configuration classes for test class [ma.shopflow.catalogue.ProduitJpaRepositoryTest]: ProduitJpaRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:42:45 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [ProduitJpaRepositoryTest]: [ImportsContextCustomizerFactory, PropertyMappingContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory, WebDriverContextCustomizerFactory, SpringBootTestRandomPortContextCustomizerFactory, ServiceConnectionContextCustomizerFactory]
+11:42:45 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizers for test class [ProduitJpaRepositoryTest]: [ImportsContextCustomizer, PropertyMappingContextCustomizer, ExcludeFilterContextCustomizer, TypeExcludeFiltersContextCustomizer, DuplicateJsonObjectContextCustomizer, OnFailureConditionReportContextCustomizer, DisableAutoConfigurationContextCustomizer, DynamicPropertiesContextCustomizer, WebDriverContextCustomizer, SpringBootTestRandomPortContextCustomizer, ServiceConnectionContextCustomizer]
+11:42:45 INFO  gBootTestContextBootstrapper : Found @SpringBootConfiguration ma.shopflow.ShopflowApplication for test class ma.shopflow.catalogue.ProduitJpaRepositoryTest
+11:42:45 DEBUG taJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [ProduitJpaRepositoryTest]: using SpringBootContextLoader
+11:42:45 DEBUG taJpaTestContextBootstrapper : Using TestExecutionListeners for test class [ProduitJpaRepositoryTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, BeanOverrideTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, CommonCachesTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, MockitoResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+11:42:45 INFO  ProduitJpaRepositoryTest     : Starting ProduitJpaRepositoryTest using Java 21.0.9 with PID 146594 (started by mourad in /home/mourad/git_workspace/shopflow-tp3)
+11:42:45 INFO  ProduitJpaRepositoryTest     : No active profile set, falling back to 1 default profile: "default"
+11:42:45 DEBUG SpringApplication            : Loading source class ma.shopflow.ShopflowApplication
+11:42:45 DEBUG ConnectionDetailsRegistrar   : Registering 'jdbcContainerConnectionDetailsForPostgres' for @ServiceConnection source for Bean 'postgres' defined in class path resource [ma/shopflow/TestcontainersConfiguration.class]
+11:42:45 DEBUG ConnectionDetailsRegistrar   : Registering 'flywayContainerConnectionDetailsForPostgres' for @ServiceConnection source for Bean 'postgres' defined in class path resource [ma/shopflow/TestcontainersConfiguration.class]
+11:42:45 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:42:45 DEBUG AutoConfigurationPackages    : @EnableAutoConfiguration was declared on a class in the package 'ma.shopflow'. Automatic @Repository and @Entity scanning is enabled.
+11:42:45 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 2 JPA repository interfaces.
+11:42:45 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+11:42:45 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 4003c8b4004f07f072109de379b65edbf87b64823f9c838640cf9d63ee26ab5b
+11:42:46 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT1.528240927S
+11:42:46 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32776/test?loggerLevel=OFF)
+11:42:46 DEBUG rsLifecycleBeanPostProcessor : Initialized and started startable beans '[postgres]'
+11:42:47 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32776/test?loggerLevel=OFF (PostgreSQL 17.11)
+11:42:47 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+11:42:47 INFO  DbValidate                   : Successfully validated 3 migrations (execution time 00:00.005s)
+11:42:47 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+11:42:47 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+11:42:47 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+11:42:47 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+11:42:47 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+11:42:47 INFO  DbMigrate                    : Successfully applied 3 migrations to schema "public", now at version v3 (execution time 00:00.035s)
+11:42:47 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+11:42:47 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+11:42:47 INFO  HikariDataSource             : HikariPool-2 - Starting...
+11:42:47 INFO  HikariPool                   : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@38ede85d
+11:42:47 INFO  HikariDataSource             : HikariPool-2 - Start completed.
+11:42:47 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32776/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+11:42:47 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11:42:47 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:42:47 DEBUG ditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   DataJpaRepositoriesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceConfiguration.Hikari matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+      - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceInitializationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+      - SQL InitializationDatabase Initialization default value is EMBEDDED (OnSqlInitializationCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.sql.autoconfigure.init.ApplicationScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   FlywayAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.flyway.enabled=true) matched (OnPropertyCondition)
+      - AnyNestedCondition 2 matched 1 did not; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.FlywayUrlCondition @ConditionalOnProperty (spring.flyway.url) did not find property 'spring.flyway.url'; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.JdbcConnectionDetailsCondition @ConditionalOnBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) found bean 'jdbcContainerConnectionDetailsForPostgres'; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.DataSourceBeanCondition @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource' (FlywayAutoConfiguration.FlywayDataSourceCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.support.JdbcUtils' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.flywaydb.core.Flyway; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration#flywayInitializer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.PostgresqlConfiguration matched:
+      - @ConditionalOnClass found required class 'org.flywaydb.database.postgresql.PostgreSQLConfigurationExtension' (OnClassCondition)
+
+   HibernateJpaAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'jakarta.persistence.EntityManager', 'org.hibernate.engine.spi.SessionImplementor' (OnClassCondition)
+
+   HibernateJpaConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcClientAutoConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactoryBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#jpaVendorAdapter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#transactionManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration#persistenceManagedTypes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.persistenceunit.PersistenceManagedTypes; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TestDatabaseAutoConfiguration#nonTestEmbeddedDataSourceBeanFactoryPostProcessor matched:
+      - @ConditionalOnProperty (spring.test.database.replace=NON_TEST) matched (OnPropertyCondition)
+
+   TestEntityManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.persistence.EntityManagerFactory' (OnClassCondition)
+
+   TestEntityManagerAutoConfiguration#testEntityManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.jpa.test.autoconfigure.TestEntityManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionManagerCustomizationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration#platformTransactionManagerCustomizers matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.transaction.autoconfigure.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   DataJpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+      Did not match:
+         - @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) found different value in property 'spring.data.jpa.repositories.bootstrap-mode' (OnPropertyCondition)
+
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+      Did not match:
+         - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) found beans of type 'org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails' jdbcContainerConnectionDetailsForPostgres (OnBeanCondition)
+
+   DataSourceCheckpointRestoreConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+   DataSourceConfiguration.Dbcp2:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourceConfiguration.Generic:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+   DataSourceConfiguration.OracleUcp:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourceConfiguration.Tomcat:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceJmxConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) found different value in property 'spring.jmx.enabled' (OnPropertyCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' transactionManager (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration#flywayConnectionDetails:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.flyway.autoconfigure.FlywayConnectionDetails; SearchStrategy: all) found beans of type 'org.springframework.boot.flyway.autoconfigure.FlywayConnectionDetails' flywayContainerConnectionDetailsForPostgres (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.OracleConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.database.oracle.OracleConfigurationExtension' (OnClassCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.SqlServerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.database.sqlserver.SQLServerConfigurationExtension' (OnClassCondition)
+
+   JpaBaseConfiguration.JpaWebConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+
+   LazyConnectionDataSourceConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.connection-fetch=lazy) did not find property 'spring.datasource.connection-fetch' (OnPropertyCondition)
+
+   TestDatabaseAutoConfiguration#dataSource:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=AUTO_CONFIGURED) did not find property 'spring.test.database.replace' (OnPropertyCondition)
+
+   TestDatabaseAutoConfiguration#embeddedDataSourceBeanFactoryPostProcessor:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=ANY) did not find property 'spring.test.database.replace' (OnPropertyCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfiguration
+
+    org.springframework.boot.jdbc.test.autoconfigure.TestDatabaseAutoConfiguration
+
+
+
+11:42:47 INFO  ProduitJpaRepositoryTest     : Started ProduitJpaRepositoryTest in 2.068 seconds (process running for 12.292)
+11:42:47 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:47 DEBUG SQL                          : insert into produit (nom,prix_unitaire,stock,reference) values (?,?,?,?)
+Hibernate: insert into produit (nom,prix_unitaire,stock,reference) values (?,?,?,?)
+11:42:47 DEBUG SQL                          : update produit set nom=?,prix_unitaire=?,stock=? where reference=?
+Hibernate: update produit set nom=?,prix_unitaire=?,stock=? where reference=?
+11:42:47 WARN  error                        : HHH000247: ErrorCode: 0, SQLState: 23514
+11:42:47 WARN  error                        : ERROR: new row for relation "produit" violates check constraint "produit_stock_check"
+  Detail: Failing row contains (TEST-99, Produit de test, 10.00, -1).
+11:42:47 DEBUG SQL                          : select count(*) from produit pe1_0
+Hibernate: select count(*) from produit pe1_0
+11:42:47 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:47 DEBUG SQL                          : select * from produit
+where unaccent(lower(nom)) like unaccent(lower('%' || ? || '%'))
+order by nom
+
+Hibernate: select * from produit
+where unaccent(lower(nom)) like unaccent(lower('%' || ? || '%'))
+order by nom
+
+11:42:47 DEBUG SQL                          : select * from produit
+where unaccent(lower(nom)) like unaccent(lower('%' || ? || '%'))
+order by nom
+
+Hibernate: select * from produit
+where unaccent(lower(nom)) like unaccent(lower('%' || ? || '%'))
+order by nom
+
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.243 s -- in Catalogue PostgreSQL
+[INFO] Running Stock PostgreSQL
+11:42:47 INFO  tionConfigContextLoaderUtils : Could not detect default configuration classes for test class [ma.shopflow.catalogue.StockJpaAdapterTest]: StockJpaAdapterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:42:47 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [StockJpaAdapterTest]: [ImportsContextCustomizerFactory, PropertyMappingContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory, WebDriverContextCustomizerFactory, SpringBootTestRandomPortContextCustomizerFactory, ServiceConnectionContextCustomizerFactory]
+11:42:47 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizers for test class [StockJpaAdapterTest]: [ImportsContextCustomizer, PropertyMappingContextCustomizer, ExcludeFilterContextCustomizer, TypeExcludeFiltersContextCustomizer, DuplicateJsonObjectContextCustomizer, OnFailureConditionReportContextCustomizer, DisableAutoConfigurationContextCustomizer, DynamicPropertiesContextCustomizer, WebDriverContextCustomizer, SpringBootTestRandomPortContextCustomizer, ServiceConnectionContextCustomizer]
+11:42:47 INFO  gBootTestContextBootstrapper : Found @SpringBootConfiguration ma.shopflow.ShopflowApplication for test class ma.shopflow.catalogue.StockJpaAdapterTest
+11:42:47 INFO  tionConfigContextLoaderUtils : Could not detect default configuration classes for test class [ma.shopflow.catalogue.StockJpaAdapterTest]: StockJpaAdapterTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:42:47 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizerFactory implementations for test class [StockJpaAdapterTest]: [ImportsContextCustomizerFactory, PropertyMappingContextCustomizerFactory, ExcludeFilterContextCustomizerFactory, TypeExcludeFiltersContextCustomizerFactory, DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory, DuplicateJsonObjectContextCustomizerFactory, OnFailureConditionReportContextCustomizerFactory, OverrideAutoConfigurationContextCustomizerFactory, BeanOverrideContextCustomizerFactory, MockServerContainerContextCustomizerFactory, DynamicPropertiesContextCustomizerFactory, WebDriverContextCustomizerFactory, SpringBootTestRandomPortContextCustomizerFactory, ServiceConnectionContextCustomizerFactory]
+11:42:47 DEBUG taJpaTestContextBootstrapper : Using ContextCustomizers for test class [StockJpaAdapterTest]: [ImportsContextCustomizer, PropertyMappingContextCustomizer, ExcludeFilterContextCustomizer, TypeExcludeFiltersContextCustomizer, DuplicateJsonObjectContextCustomizer, OnFailureConditionReportContextCustomizer, DisableAutoConfigurationContextCustomizer, DynamicPropertiesContextCustomizer, WebDriverContextCustomizer, SpringBootTestRandomPortContextCustomizer, ServiceConnectionContextCustomizer]
+11:42:47 INFO  gBootTestContextBootstrapper : Found @SpringBootConfiguration ma.shopflow.ShopflowApplication for test class ma.shopflow.catalogue.StockJpaAdapterTest
+11:42:47 DEBUG taJpaTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [StockJpaAdapterTest]: using SpringBootContextLoader
+11:42:47 DEBUG taJpaTestContextBootstrapper : Using TestExecutionListeners for test class [StockJpaAdapterTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, BeanOverrideTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, CommonCachesTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, MockitoResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+11:42:47 INFO  StockJpaAdapterTest          : Starting StockJpaAdapterTest using Java 21.0.9 with PID 146594 (started by mourad in /home/mourad/git_workspace/shopflow-tp3)
+11:42:47 INFO  StockJpaAdapterTest          : No active profile set, falling back to 1 default profile: "default"
+11:42:47 DEBUG SpringApplication            : Loading source class ma.shopflow.ShopflowApplication
+11:42:47 DEBUG ConnectionDetailsRegistrar   : Registering 'jdbcContainerConnectionDetailsForPostgres' for @ServiceConnection source for Bean 'postgres' defined in class path resource [ma/shopflow/TestcontainersConfiguration.class]
+11:42:47 DEBUG ConnectionDetailsRegistrar   : Registering 'flywayContainerConnectionDetailsForPostgres' for @ServiceConnection source for Bean 'postgres' defined in class path resource [ma/shopflow/TestcontainersConfiguration.class]
+11:42:47 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:42:47 DEBUG AutoConfigurationPackages    : @EnableAutoConfiguration was declared on a class in the package 'ma.shopflow'. Automatic @Repository and @Entity scanning is enabled.
+11:42:47 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 2 JPA repository interfaces.
+11:42:47 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+11:42:47 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 3ee9633da24ba8d09435b3a448f763df49f9003fb5621359fa6827168009b15d
+11:42:49 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT1.554477774S
+11:42:49 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32777/test?loggerLevel=OFF)
+11:42:49 DEBUG rsLifecycleBeanPostProcessor : Initialized and started startable beans '[postgres]'
+11:42:49 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32777/test?loggerLevel=OFF (PostgreSQL 17.11)
+11:42:49 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+11:42:49 INFO  DbValidate                   : Successfully validated 3 migrations (execution time 00:00.006s)
+11:42:49 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+11:42:49 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+11:42:49 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+11:42:49 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+11:42:49 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+11:42:49 INFO  DbMigrate                    : Successfully applied 3 migrations to schema "public", now at version v3 (execution time 00:00.031s)
+11:42:49 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+11:42:49 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+11:42:49 INFO  HikariDataSource             : HikariPool-3 - Starting...
+11:42:49 INFO  HikariPool                   : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@6c95bb3c
+11:42:49 INFO  HikariDataSource             : HikariPool-3 - Start completed.
+11:42:49 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32777/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+11:42:49 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11:42:49 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:42:49 DEBUG ditionEvaluationReportLogger : 
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   DataJpaRepositoriesAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.data.jpa.repository.JpaRepository' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.data.jpa.repositories.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceConfiguration.Hikari matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+      - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceInitializationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+      - SQL InitializationDatabase Initialization default value is EMBEDDED (OnSqlInitializationCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.sql.autoconfigure.init.ApplicationScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   FlywayAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.flywaydb.core.Flyway' (OnClassCondition)
+      - @ConditionalOnBooleanProperty (spring.flyway.enabled=true) matched (OnPropertyCondition)
+      - AnyNestedCondition 2 matched 1 did not; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.FlywayUrlCondition @ConditionalOnProperty (spring.flyway.url) did not find property 'spring.flyway.url'; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.JdbcConnectionDetailsCondition @ConditionalOnBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) found bean 'jdbcContainerConnectionDetailsForPostgres'; NestedCondition on FlywayAutoConfiguration.FlywayDataSourceCondition.DataSourceBeanCondition @ConditionalOnBean (types: javax.sql.DataSource; SearchStrategy: all) found bean 'dataSource' (FlywayAutoConfiguration.FlywayDataSourceCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.support.JdbcUtils' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: org.flywaydb.core.Flyway; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration#flywayInitializer matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.PostgresqlConfiguration matched:
+      - @ConditionalOnClass found required class 'org.flywaydb.database.postgresql.PostgreSQLConfigurationExtension' (OnClassCondition)
+
+   HibernateJpaAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean', 'jakarta.persistence.EntityManager', 'org.hibernate.engine.spi.SessionImplementor' (OnClassCondition)
+
+   HibernateJpaConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcClientAutoConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactory matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#entityManagerFactoryBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.jpa.EntityManagerFactoryBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#jpaVendorAdapter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.JpaVendorAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration#transactionManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean,jakarta.persistence.EntityManagerFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JpaBaseConfiguration.PersistenceManagedTypesConfiguration#persistenceManagedTypes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.orm.jpa.persistenceunit.PersistenceManagedTypes; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TestDatabaseAutoConfiguration#nonTestEmbeddedDataSourceBeanFactoryPostProcessor matched:
+      - @ConditionalOnProperty (spring.test.database.replace=NON_TEST) matched (OnPropertyCondition)
+
+   TestEntityManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'jakarta.persistence.EntityManagerFactory' (OnClassCondition)
+
+   TestEntityManagerAutoConfiguration#testEntityManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.jpa.test.autoconfigure.TestEntityManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionManagerCustomizationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration#platformTransactionManagerCustomizers matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.transaction.autoconfigure.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   DataJpaRepositoriesAutoConfiguration#entityManagerFactoryBootstrapExecutorCustomizer:
+      Did not match:
+         - @ConditionalOnProperty (spring.data.jpa.repositories.bootstrap-mode=deferred) found different value in property 'spring.data.jpa.repositories.bootstrap-mode' (OnPropertyCondition)
+
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
+      Did not match:
+         - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) found beans of type 'org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails' jdbcContainerConnectionDetailsForPostgres (OnBeanCondition)
+
+   DataSourceCheckpointRestoreConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+   DataSourceConfiguration.Dbcp2:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourceConfiguration.Generic:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+   DataSourceConfiguration.OracleUcp:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourceConfiguration.Tomcat:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceJmxConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) found different value in property 'spring.jmx.enabled' (OnPropertyCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found beans of type 'org.springframework.transaction.TransactionManager' transactionManager (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration#flywayConnectionDetails:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.boot.flyway.autoconfigure.FlywayConnectionDetails; SearchStrategy: all) found beans of type 'org.springframework.boot.flyway.autoconfigure.FlywayConnectionDetails' flywayContainerConnectionDetailsForPostgres (OnBeanCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.OracleConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.database.oracle.OracleConfigurationExtension' (OnClassCondition)
+
+   FlywayAutoConfiguration.FlywayConfiguration.SqlServerConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.flywaydb.database.sqlserver.SQLServerConfigurationExtension' (OnClassCondition)
+
+   JpaBaseConfiguration.JpaWebConfiguration:
+      Did not match:
+         - not a servlet web application (OnWebApplicationCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+
+   LazyConnectionDataSourceConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.connection-fetch=lazy) did not find property 'spring.datasource.connection-fetch' (OnPropertyCondition)
+
+   TestDatabaseAutoConfiguration#dataSource:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=AUTO_CONFIGURED) did not find property 'spring.test.database.replace' (OnPropertyCondition)
+
+   TestDatabaseAutoConfiguration#embeddedDataSourceBeanFactoryPostProcessor:
+      Did not match:
+         - @ConditionalOnProperty (spring.test.database.replace=ANY) did not find property 'spring.test.database.replace' (OnPropertyCondition)
+
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    org.springframework.boot.testcontainers.service.connection.ServiceConnectionAutoConfiguration
+
+    org.springframework.boot.jdbc.test.autoconfigure.TestDatabaseAutoConfiguration
+
+
+
+11:42:49 INFO  StockJpaAdapterTest          : Started StockJpaAdapterTest in 2.065 seconds (process running for 14.515)
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock+?) where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock+?) where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit set nom=?,prix_unitaire=?,stock=? where reference=?
+Hibernate: update produit set nom=?,prix_unitaire=?,stock=? where reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+11:42:49 DEBUG SQL                          : select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.213 s -- in Stock PostgreSQL
+[INFO] Running Service de commande
+11:42:49 WARN  ServiceCommande              : E-mail non envoyé pour la commande 0e42c54d-f00e-4985-8ef8-96dad8661bd1 : Serveur SMTP injoignable
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.256 s -- in Service de commande
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 53, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  20.635 s
+[INFO] Finished at: 2026-10-31T11:42:50+01:00
+[INFO] ------------------------------------------------------------------------

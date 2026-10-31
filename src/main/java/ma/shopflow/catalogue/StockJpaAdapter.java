@@ -26,20 +26,17 @@ public class StockJpaAdapter implements StockService {
 
     @Override
     public void reserver(String reference, int quantite) {
-        ProduitEntity produit = produits.findById(reference)
-                .orElseThrow(() -> new ProduitInconnuException(reference));
-        if (produit.getStock() < quantite) {
-            throw new RuptureDeStockException(reference);
+        if (produits.decrementerStock(reference, quantite) == 0) {
+            throw produits.existsById(reference)
+                    ? new RuptureDeStockException(reference)
+                    : new ProduitInconnuException(reference);
         }
-        produit.setStock(produit.getStock() - quantite);
-        produits.save(produit);
     }
 
     @Override
     public void liberer(String reference, int quantite) {
-        ProduitEntity produit = produits.findById(reference)
-                .orElseThrow(() -> new ProduitInconnuException(reference));
-        produit.setStock(produit.getStock() + quantite);
-        produits.save(produit);
+        if (produits.incrementerStock(reference, quantite) == 0) {
+            throw new ProduitInconnuException(reference);
+        }
     }
 }
