@@ -1,0 +1,61 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< ma.shopflow:shopflow >------------------------
+[INFO] Building ShopFlow 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.11.0:properties (default) @ shopflow ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ shopflow ---
+[INFO] skip non existing resourceDirectory /home/mourad/git_workspace/shopflow-tp3/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ shopflow ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 18 source files with javac [debug release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ shopflow ---
+[INFO] skip non existing resourceDirectory /home/mourad/git_workspace/shopflow-tp3/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ shopflow ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ shopflow ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running Code promo
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.175 s -- in Code promo
+[INFO] Running Panier ShopFlow
+[INFO] Running R8 : code promo
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in R8 : code promo
+[INFO] Running R6 et R7 : remise et total
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in R6 et R7 : remise et total
+[INFO] Running R5 : frais de livraison
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s -- in R5 : frais de livraison
+[INFO] Running R4 : sous-total
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in R4 : sous-total
+[INFO] Running R1 à R3 : ajout de produits
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in R1 à R3 : ajout de produits
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s -- in Panier ShopFlow
+[INFO] Running Points de fidélité
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s -- in Points de fidélité
+[INFO] Running Service de commande
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Oct 31, 2026 11:37:36 AM ma.shopflow.commande.ServiceCommande passerCommande
+WARNING: E-mail non envoyé pour la commande 0bf4f5a0-a6ef-4714-abfa-e928c6a63156 : Serveur SMTP injoignable
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.677 s -- in Service de commande
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 42, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.117 s
+[INFO] Finished at: 2026-10-31T11:37:36+01:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:8080
+
+### Rechercher l'écran sans saisir son accent
+GET {{baseUrl}}/api/produits?q=ecran
+
+### Commander un clavier et deux souris : 201, total de 690 DH
+POST {{baseUrl}}/api/commandes
+Content-Type: application/json
+
+< ./commande.json
+
+### Vérifier le stock des souris après la commande : 38 sur une base neuve
+GET {{baseUrl}}/api/produits?q=souris
+
+### Dépasser le plafond de paiement : 402 et stock des portables restitué
+POST {{baseUrl}}/api/commandes
+Content-Type: application/json
+
+< ./commande-trop-chere.json
