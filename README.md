@@ -1,149 +1,279 @@
-# TP2 - Mockito, AssertJ et TDD
+# TP3 - Spring Boot, PostgreSQL et tests d'intégration
 
-Solution du TP2 ShopFlow du Pr. Youssef Gahi : prise de commande avec des
-doublures Mockito et calcul des points de fidélité développé en TDD.
+ShopFlow prolonge les TP1 et TP2 du Pr. Youssef Gahi avec une API REST,
+un catalogue PostgreSQL, la persistance des commandes et des tests d'intégration.
+Le test concurrent révèle une survente, puis vérifie sa correction.
 
-Ce dossier `shopflow-tp2` est un dépôt indépendant créé à partir du tag `tp1`.
-Le TP1 d'origine reste dans `../tes_unitaire_master`. Le nom Maven du projet
-reste `ma.shopflow:shopflow`, comme dans le sujet.
+Ce dépôt indépendant `shopflow-tp3` a été créé à partir du tag `tp2`.
+Les projets `../tes_unitaire_master` et `../shopflow-tp2` restent disponibles.
+Les tags `tp1`, `tp2` et l'historique des cycles TDD sont conservés.
 
-## 1. Exécuter la solution
+## 1. Ouvrir le projet dans VS Code
 
-Dans le terminal, depuis ce dossier :
+Ouvrir le dossier `shopflow-tp3` avec **Fichier > Ouvrir le dossier**, puis attendre
+l'import du projet Maven. Le `pom.xml` utilise Spring Boot **4.1.1** et Java **21** ;
+le parent Spring Boot gère les versions de ses bibliothèques.
+Les versions résolues sont JUnit **6.0.3**, Mockito **5.23.0**, AssertJ **3.27.7**
+et Testcontainers **2.0.5**, consignées dans `validation/tp3/09-versions-dependances.log`.
+
+Sur le poste où le TP a été préparé :
+
+- VS Code, les extensions Java et **Spring Boot Extension Pack** sont installés.
+- Le JDK 21 est disponible dans `/opt/intellij-idea-ultimate/jbr`.
+- Maven 3.9 est disponible dans
+  `/opt/intellij-idea-ultimate/plugins/maven/lib/maven3/bin/mvn`.
+- Docker fonctionne et l'image `postgres:17-alpine` est déjà téléchargée.
+
+Les réglages propres à ce poste sont dans `.vscode/settings.json` : JavaSE-21,
+chemin de Maven, `JAVA_HOME` et `PATH` des nouveaux terminaux. Ce dossier est
+ignoré par Git et exclu du livrable. Sur un autre poste, installer un JDK 21,
+Maven 3.9, Docker et les extensions Java/Spring, puis adapter les chemins locaux.
+Aucune base PostgreSQL permanente n'est nécessaire pour suivre ce guide.
+
+Dans un **nouveau terminal** de VS Code, on peut vérifier l'environnement :
+
+```bash
+java -version
+mvn -version
+docker version
+```
+
+Le serveur Docker doit être accessible. Si l'image n'est pas encore présente :
+
+```bash
+docker pull postgres:17-alpine
+```
+
+## 2. Exécuter les tests
+
+Depuis la racine du projet :
 
 ```bash
 ./tester.sh
 ```
 
-Le script utilise Java 21 et Maven fournis par IntelliJ sur ce poste, sans
-modifier la configuration du système. Si `JAVA_HOME` est déjà défini, il reste
-prioritaire et doit pointer vers un JDK 21 ou ultérieur.
+Sans argument, le script lance `test`. Sur ce poste, il retrouve le JDK 21 et
+Maven fournis par IntelliJ sans changer les réglages du système. Si `JAVA_HOME`
+est déjà défini, il reste prioritaire et doit désigner un JDK compatible.
+Avec Java 21 et Maven dans le `PATH`, la commande équivalente est `mvn test`.
 
-Avec Java 21 et Maven 3.9 installés dans le `PATH`, la commande équivalente est
-`mvn test`. Le premier lancement télécharge les dépendances et demande Internet.
-Résultat attendu :
+La vérification complète enregistrée dans
+[`06-validation-complete.log`](validation/tp3/06-validation-complete.log) a été lancée avec :
+
+```bash
+./tester.sh -B -ntp clean test
+```
+
+Résultat observé :
 
 ```text
-Tests run: 42, Failures: 0, Errors: 0, Skipped: 0
+Tests run: 53, Failures: 0, Errors: 0, Skipped: 0
 BUILD SUCCESS
 ```
 
-Pour lancer un groupe précis :
+Pour travailler sur une partie, garder le but Maven `test` à la fin :
 
 ```bash
+./tester.sh -Dtest=ProduitJpaRepositoryTest test
+./tester.sh -Dtest=StockJpaAdapterTest test
+./tester.sh -Dtest=CommandeApiTest test
 ./tester.sh -Dtest=ServiceCommandeTest test
 ./tester.sh -Dtest=CalculateurFideliteTest test
 ```
 
-Les tests ne contactent aucun entrepôt, service bancaire, serveur d'e-mails ni
-base de données : ces quatre frontières sont remplacées par des mocks.
-Le message `WARNING` indiquant « Serveur SMTP injoignable » est attendu dans le
-test qui simule une panne d'e-mail. La commande reste confirmée et le test passe.
+Par exemple, `mvn -Dtest=StockJpaAdapterTest test` est la commande Maven équivalente.
+Les 42 cas des TP1/TP2 peuvent être lancés seuls :
 
-## 2. Les fichiers à lire
+```bash
+./tester.sh -Dtest=PanierTest,CodePromoTest,ServiceCommandeTest,CalculateurFideliteTest test
+```
 
-| Emplacement | Contenu |
+| Classe de test | Cas | Ce qui est vérifié |
+| --- | ---: | --- |
+| `PanierTest` | 18 | Règles du panier, remise et livraison |
+| `CodePromoTest` | 7 | Validité des codes promotionnels |
+| `ServiceCommandeTest` | 6 | Service métier isolé avec Mockito |
+| `CalculateurFideliteTest` | 11 | Points de fidélité développés en TDD |
+| `ProduitJpaRepositoryTest` | 3 | Migrations, recherche sans accents, contrainte SQL |
+| `StockJpaAdapterTest` | 4 | Réservation, refus, libération et concurrence |
+| `CommandeApiTest` | 4 | API, stock et commande persistée |
+| **Total : 7 classes** | **53** | **42 cas hérités + 11 cas d'intégration** |
+
+Les tests d'intégration utilisent un **vrai PostgreSQL 17 jetable** lancé par
+Testcontainers. Le conteneur reçoit un port disponible automatiquement ;
+`@ServiceConnection` fournit la connexion à Spring. Flyway crée le schéma et
+charge les six produits avant les tests. Les bases de ces conteneurs sont
+supprimées à l'arrêt : elles ne modifient pas un PostgreSQL déjà installé.
+Le premier lancement peut télécharger les dépendances et les images Docker.
+
+Le message `WARNING` ou `WARN` contenant « Serveur SMTP injoignable » dans le test
+unitaire de commande est attendu : il prouve que la panne d'e-mail simulée reste
+sans effet sur la confirmation. L'erreur SQL `produit_stock_check` est aussi
+attendue dans le test qui tente volontairement d'enregistrer un stock négatif.
+
+## 3. Comprendre les couches et les tables
+
+Une requête arrive dans un contrôleur REST. Pour une commande, le contrôleur
+construit un `Panier` et appelle le `ServiceCommande` du TP2. Spring lui fournit
+les adaptateurs de stock, de paiement, de persistance et de notification.
+
+| Emplacement | Classes et rôle |
 | --- | --- |
-| `src/main/java/ma/shopflow/panier/` | Les 5 classes métier du TP1 |
-| `src/main/java/ma/shopflow/commande/` | Les objets de commande, les 4 interfaces et `ServiceCommande` |
-| `src/main/java/ma/shopflow/fidelite/` | `CalculateurFidelite` et `NiveauFidelite` |
-| `src/test/java/ma/shopflow/panier/` | `PanierTest` et `CodePromoTest` |
-| `src/test/java/ma/shopflow/commande/` | `ServiceCommandeTest` |
-| `src/test/java/ma/shopflow/fidelite/` | `CalculateurFideliteTest` |
-| `ANOMALIES.md` | Les 2 anomalies du TP1 et les 2 du TP2 |
-| `TDD.md` | Journal des vrais cycles rouge/vert/refactor |
-| `validation/tdd/` | Sorties Maven originales des étapes TDD |
+| `api/` | `ProduitController`, `CommandeController`, demande/réponse JSON et `ErreursApi` |
+| `catalogue/` | `ProduitEntity`, `ProduitJpaRepository` et `StockJpaAdapter` |
+| `commande/` | Métier du TP2 et ses quatre interfaces |
+| `commande/jpa/` | `CommandeEntity`, `LigneCommandeEmbeddable`, dépôt et adaptateur JPA |
+| `infra/` | Assemblage Spring, `PaiementSimule` et `NotificationJournal` |
+| `panier/`, `fidelite/` | Métier et calculs repris des TP1/TP2 |
+| `src/main/resources/db/migration/` | Les trois migrations Flyway |
+| `src/test/java/ma/shopflow/TestcontainersConfiguration.java` | PostgreSQL commun aux configurations de test et de démonstration |
 
-Le `pom.xml` reprend les versions du sujet : JUnit 5.14.4, Mockito 5.23.0,
-AssertJ 3.27.7, Surefire 3.5.6 et Dependency Plugin 3.11.0.
-Le dernier plugin fournit le chemin du JAR Mockito à Surefire, qui le charge
-avec `-javaagent` au démarrage des tests.
-
-## 3. Comprendre la partie Mockito
-
-Le vrai `ServiceCommande` reçoit quatre interfaces dans son constructeur.
-Mockito crée leurs doublures avec `@Mock`, puis les injecte dans le service
-avec `@InjectMocks`. Le panier et les objets métier restent des objets réels.
-
-| Outil | Utilité dans les tests |
+| Table PostgreSQL | Mapping et contenu |
 | --- | --- |
-| `when(...).thenReturn(...)` | Programmer une disponibilité ou une réponse bancaire |
-| `thenAnswer(...)` | Faire renvoyer au dépôt la commande qu'il reçoit |
-| `verify(...)` | Contrôler un appel et ses arguments |
-| `never()` | Vérifier qu'une opération n'a jamais eu lieu |
-| `verifyNoInteractions(...)` | Vérifier qu'un service n'a pas été contacté |
-| `InOrder` | Vérifier l'ordre réservation, débit, enregistrement, notification |
-| `ArgumentCaptor` | Inspecter la commande créée à l'intérieur du service |
-| `doThrow(...).when(...)` | Simuler une panne sur une méthode `void` |
-| `assertThat(...)` | Écrire les assertions lisibles avec AssertJ |
+| `produit` | `ProduitEntity` : référence, nom, prix unitaire et stock positif ou nul |
+| `commande` | `CommandeEntity` : client, total, référence de paiement et statut ; `cree_le` est renseigné par le défaut SQL `now()` et n'est pas mappé dans l'entité |
+| `ligne_commande` | Collection de `LigneCommandeEmbeddable` rattachée à une commande : produit, quantité et prix au moment de l'achat |
 
-Les programmations de mocks sont faites dans le test qui en a besoin, pour
-respecter le mode strict de Mockito. Une programmation inutilisée fait échouer
-le test avec `UnnecessaryStubbingException`.
+`V1__schema.sql` crée les tables et leurs contraintes ; `V2__catalogue_initial.sql`
+charge le catalogue ; `V3__recherche_sans_accents.sql` active `unaccent`.
+La recherche combine `lower` et `unaccent` dans PostgreSQL : `ecran` retrouve
+« Écran 27 pouces ». Hibernate utilise `ddl-auto=validate` pour contrôler le
+schéma construit par Flyway.
 
-Les six cas de commande correspondent aux règles du sujet :
+Dans `CommandeApiTest`, Spring charge l'application, MockMvc exerce les
+contrôleurs et PostgreSQL stocke réellement les commandes. Seule la notification
+est remplacée par `@MockitoBean` ; les tests vérifient aussi le contenu des tables
+et la restitution du stock après un paiement refusé.
 
-| Test | Comportement vérifié |
+Le paiement reste simulé : les montants jusqu'à 10 000 DH sont acceptés.
+La notification est une ligne de journal. Aucun établissement bancaire ni
+serveur d'e-mails réel n'est contacté.
+
+## 4. Comprendre et reproduire la survente
+
+Le premier adaptateur faisait « lire, vérifier, modifier ». Avec 20 clients
+simultanés pour 8 écrans, plusieurs transactions lisaient le même stock avant
+de le réécrire. Le test a observé **20 réservations acceptées au lieu de 8**.
+Le commit `848c344` et
+[`04-stock-avant-correction.log`](validation/tp3/04-stock-avant-correction.log)
+conservent cet état rouge.
+
+Le correctif utilise une seule mise à jour conditionnelle pour la réservation :
+
+```sql
+update produit set stock = stock - :quantite
+where reference = :reference and stock >= :quantite
+```
+
+Le calcul et la condition sont exécutés ensemble par PostgreSQL. Une mise à jour
+qui ne modifie aucune ligne provoque le refus de réservation. La libération
+utilise aussi `stock = stock + :quantite`, afin de conserver les modifications
+concurrentes. Ces deux opérations sont écrites en JPQL dans le dépôt et appelées
+depuis l'adaptateur transactionnel.
+
+Le test corrigé confirme **8 réservations acceptées et un stock final de 0** ;
+les quatre tests de stock passent. Le commit `634dcaf` conserve le correctif.
+La cause et la comparaison avant/après sont
+détaillées dans [`ANOMALIES.md`](ANOMALIES.md).
+
+## 5. Lancer l'application et appeler l'API
+
+Pour une démonstration avec PostgreSQL géré par Testcontainers :
+
+```bash
+SERVER_PORT=18080 ./tester.sh spring-boot:test-run
+```
+
+Avec Java et Maven configurés dans le terminal :
+
+```bash
+SERVER_PORT=18080 mvn spring-boot:test-run
+```
+
+Cette commande utilise `TestShopflowApplication`, dans les sources de test,
+qui ajoute le conteneur PostgreSQL à l'application. Attendre le message
+`Started ShopflowApplication`, puis utiliser un deuxième terminal pour les
+requêtes. Sur ce poste, le port 8080 est déjà occupé : la démonstration utilise
+**18080**. Sur un poste où 8080 est libre, omettre `SERVER_PORT=18080` utilise le
+port par défaut ; adapter alors les URL et `@baseUrl` dans `requetes/requetes.http`.
+
+À partir d'une base neuve, exécuter dans cet ordre :
+
+```bash
+curl -i 'http://localhost:18080/api/produits?q=ecran'
+
+curl -i -H 'Content-Type: application/json' \
+  --data-binary @requetes/commande.json \
+  http://localhost:18080/api/commandes
+
+curl -i 'http://localhost:18080/api/produits?q=souris'
+
+curl -i -H 'Content-Type: application/json' \
+  --data-binary @requetes/commande-trop-chere.json \
+  http://localhost:18080/api/commandes
+
+curl -i 'http://localhost:18080/api/produits?q=portable'
+```
+
+Ces requêtes ont été exécutées sur le port 18080. Résultats observés dans
+[`08-requetes-http.log`](validation/tp3/08-requetes-http.log) :
+
+| Requête | Résultat observé |
 | --- | --- |
-| C1 : panier vide | Refus sans contacter aucun service |
-| C2 : rupture de stock | Refus avant toute réservation et tout paiement |
-| C3 et C4 : ordre des appels | Vérifier, réserver, débiter, enregistrer puis notifier |
-| C4 : contenu enregistré | Client, lignes, total de 270 DH, statut et référence bancaire |
-| C5 : paiement refusé | Libérer les réservations, lever l'exception, ne rien enregistrer |
-| C6 : panne d'e-mail | Garder la commande confirmée et journaliser l'erreur |
+| Recherche `ecran` | `200 OK`, produit `ECRA-04` trouvé sans saisir l'accent |
+| Clavier + deux souris | `201 Created`, statut `CONFIRMEE`, total de **690 DH** |
+| Recherche `souris` après la commande | `200 OK`, stock passé de **40 à 38** |
+| Deux ordinateurs portables | `402 Payment Required`, dépassement du plafond bancaire |
+| Recherche `portable` après le refus | `200 OK`, stock restitué à **5** |
 
-Les deux défauts du code hérité ont d'abord été révélés par les tests, puis
-corrigés. Leur cause, le résultat observé et le correctif sont dans `ANOMALIES.md`.
+Le même journal contient cinq autres requêtes réelles : produit en rupture
+**409**, produit inconnu **404**, quantité supérieure à dix **422**, demande
+invalide **400** et ligne nulle **400**. Les erreurs utilisent le format
+`application/problem+json`. La réponse de création contient aussi l'en-tête
+`Location` et une référence de paiement.
 
-## 4. Comprendre la partie TDD
+Chaque nouvelle commande valide réduit le stock. `Ctrl+C` arrête l'application
+et son PostgreSQL jetable ; le lancement suivant recrée une base et un catalogue
+neufs. Les mêmes requêtes sont disponibles dans `requetes/requetes.http` pour
+l'extension REST Client déjà installée sur ce poste.
+Le démarrage et l'arrêt gracieux ont été vérifiés dans
+[`07-application-locale.log`](validation/tp3/07-application-locale.log) ;
+l'application de démonstration a ensuite été arrêtée.
+Les conteneurs Testcontainers de la démonstration ont été nettoyés après l'arrêt.
 
-Le calculateur de fidélité a été construit en écrivant chaque test avant le code
-correspondant. Les étapes sont conservées dans les commits et décrites dans
-`TDD.md` :
+## 6. Preuves et historique
 
-1. **Premier test :** 100 DH donnent 10 points. La classe n'existe pas encore ;
-   le test ne compile pas. Une première implémentation renvoie simplement 10.
-2. **Triangulation :** cinq autres montants forcent le vrai calcul des tranches
-   entières de 10 DH, avec `BigDecimal` et `RoundingMode.DOWN`.
-3. **GOLD :** ajouter le doublement des points, puis déplacer le multiplicateur
-   dans l'énumération et supprimer la duplication du calcul.
-4. **Montant négatif :** ajouter le test, constater l'échec, puis ajouter la garde
-   et son message d'exception.
-5. **Plafond :** vérifier les trois cas de l'exercice, limiter les points après
-   multiplication, puis nommer la constante `PLAFOND_PAR_COMMANDE`.
+Les résultats Maven originaux sont dans `validation/tp3/` :
 
-Un cycle rouge doit échouer pour la raison prévue. Le vert ajoute le minimum
-nécessaire. Le refactor améliore la structure en gardant les tests au vert.
+| Journal | Résultat observé |
+| --- | --- |
+| `01-base-tp2.log` | 42 cas hérités au vert avant la migration |
+| `02-spring-boot-unitaires.log` | Les mêmes 42 cas au vert après passage à Spring Boot |
+| `03-catalogue.log` | 3 tests PostgreSQL au vert |
+| `04-stock-avant-correction.log` | 4 tests de stock, 1 échec : 20 ventes au lieu de 8 |
+| `05-stock-apres-correction.log` | 4 tests de stock au vert, concurrence corrigée |
+| `06-validation-complete.log` | Suite complète : 53 tests, aucun échec ni erreur |
+| `07-application-locale.log` | Démarrage sur 18080 et arrêt gracieux, `BUILD SUCCESS` |
+| `08-requetes-http.log` | 10 requêtes HTTP réelles : statuts, réponses et stock vérifiés |
+| `09-versions-dependances.log` | Versions des bibliothèques effectivement résolues par Maven |
 
-## 5. Répartition des 42 cas
-
-| Classe de test | Cas exécutés |
-| --- | ---: |
-| `PanierTest` | 18 |
-| `CodePromoTest` | 7 |
-| `ServiceCommandeTest` | 6 |
-| `CalculateurFideliteTest` | 11 |
-| **Total** | **42** |
-
-Les 11 cas de fidélité sont : le premier exemple à 100 DH, les cinq valeurs de
-F1, le client GOLD, le montant négatif, et les trois cas du plafond. JUnit compte
-chaque ligne de `@CsvSource` comme une exécution distincte.
-
-## 6. Git et remise du TP
-
-Les tags `tp1` et `tp2` permettent de retrouver les deux versions. Pour consulter
-l'historique et les cycles TDD sans changer la version de travail :
+Les tests rouges constituent des preuves de défauts observés ; ils sont conservés
+dans l'historique, puis corrigés dans la version courante. Pour consulter les
+étapes sans modifier le dossier de travail :
 
 ```bash
 git tag --list
 git log --all --graph --oneline --decorate
-git diff tp1..tp2 --stat
+git show 848c344:src/main/java/ma/shopflow/catalogue/StockJpaAdapter.java
+git diff 848c344..634dcaf -- src/main/java/ma/shopflow/catalogue/
+git diff tp2..HEAD --stat
 git status --short
 ```
 
-Le livrable est une archive ZIP contenant les sources, les tests, les documents
-et le dossier `.git` avec les deux tags, en excluant `target/`. Les rapports du
-dernier lancement restent consultables localement dans `target/surefire-reports/`.
-
-Les extensions de fin de sujet (fake en mémoire, photographie du panier et bonus
-de première commande F5) sont facultatives et ne font pas partie des 42 cas demandés.
+[`TDD.md`](TDD.md) et `validation/tdd/` conservent les vrais cycles
+rouge/vert/refactor du TP2, avec leurs commits d'origine.
+Les rapports d'un lancement local se trouvent dans `target/surefire-reports/`.
+L'archive de remise `../shopflow-tp3.zip` regroupe le projet dans un dossier
+`shopflow/`, avec les sources, requêtes, documents, preuves originales et le
+dossier `.git` contenant les tags et l'historique. Les dossiers `target/`,
+`.vscode/` et `.idea/` sont exclus.

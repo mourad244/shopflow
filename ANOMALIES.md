@@ -1,4 +1,4 @@
-# Fiche d'anomalies - TP1 et TP2 ShopFlow
+# Fiche d'anomalies - TP1, TP2 et TP3 ShopFlow
 
 ## Anomalie 1 : livraison facturée à exactement 500 DH
 
@@ -168,3 +168,111 @@ est attendu : il confirme que la panne a été simulée et journalisée.
 Commande de reproduction : `./tester.sh -Dtest=ServiceCommandeTest test`.
 Après intégration des 11 cas de fidélité, le lancement complet a confirmé
 **42 tests exécutés, 0 échec, 0 erreur et 0 test ignoré**.
+
+
+## Anomalie 5 (TP3) : survente lors de réservations simultanées
+
+**Règle concernée :** une réservation ne peut être acceptée que si la quantité
+est encore disponible au moment de la mise à jour. Vingt clients qui demandent
+chacun un écran ne doivent pas obtenir plus que les huit écrans disponibles.
+
+**Test révélateur :**
+`StockJpaAdapterTest.lesReservationsSimultaneesNeSurvendentPas`.
+
+- Préparation : remettre le stock de `ECRA-04` à **8** et créer **20** tâches.
+- Action : attendre que les 20 tâches soient prêtes, puis libérer leur départ
+  avec un `CountDownLatch`. Chacune appelle `stock.reserver("ECRA-04", 1)`.
+- Attendu : **8 réservations acceptées**, **12 refus pour rupture**, stock final **0**.
+- Observé avant correction : **20 réservations acceptées**. L'assertion échoue
+  avec `expected: 8 but was: 20` ; les quatre tests de stock comptent un échec.
+
+Le commit `848c344` conserve l'implémentation défectueuse, les tests et le journal
+[`04-stock-avant-correction.log`](validation/tp3/04-stock-avant-correction.log).
+Le test utilise un vrai PostgreSQL fourni par Testcontainers ; il n'englobe pas
+les appels dans une transaction de test unique, afin que les threads exécutent
+des transactions distinctes.
+
+**Cause :** `StockJpaAdapter.reserver` lisait le produit, vérifiait le stock en
+Java, puis modifiait et sauvegardait l'entité. Plusieurs transactions pouvaient
+lire la même quantité et toutes accepter leur réservation. Leurs écritures
+successives écrasaient les décréments concurrents. La présence de
+`@Transactional` ne rendait pas atomique cet enchaînement de lecture et d'écriture.
+La contrainte SQL `stock >= 0` ne suffisait pas : plusieurs réservations acceptées
+pouvaient encore aboutir à une valeur de stock non négative mais fausse.
+
+**Correctif :** remplacer cet enchaînement par une mise à jour JPQL conditionnelle
+dans `ProduitJpaRepository`, exécutée dans la transaction de l'adaptateur :
+
+```java
+@Modifying
+@Query("update ProduitEntity p set p.stock = p.stock - :quantite "
+        + "where p.reference = :reference and p.stock >= :quantite")
+int decrementerStock(@Param("reference") String reference, @Param("quantite") int quantite);
+```
+
+PostgreSQL réalise le test de disponibilité et le décrément dans la même
+instruction. L'adaptateur contrôle le nombre de lignes modifiées : zéro ligne
+signifie une rupture ou une référence inconnue, selon l'existence du produit.
+`estDisponible` reste utile au contrôle préalable du service ; la décision
+finale de réserver appartient à cette mise à jour conditionnelle.
+
+La libération est aussi une opération arithmétique atomique :
+
+```java
+@Modifying
+@Query("update ProduitEntity p set p.stock = p.stock + :quantite where p.reference = :reference")
+int incrementerStock(@Param("reference") String reference, @Param("quantite") int quantite);
+```
+
+Elle évite d'écraser un autre changement de stock entre une lecture et une
+sauvegarde. Après correction, le même test valide huit réservations et un stock
+final nul. Les trois tests séquentiels restent verts. Le commit `634dcaf`
+conserve ce correctif, après la version défectueuse `848c344`.
+
+## Validation du TP3
+
+Les sorties Maven sont conservées dans `validation/tp3/`.
+
+| Étape | Tests exécutés | Échecs | Erreurs | Ignorés |
+| --- | ---: | ---: | ---: | ---: |
+| Base TP2 avant migration (`01-base-tp2.log`) | 42 | 0 | 0 | 0 |
+| Tests unitaires après migration Spring Boot (`02-spring-boot-unitaires.log`) | 42 | 0 | 0 | 0 |
+| Catalogue PostgreSQL (`03-catalogue.log`) | 3 | 0 | 0 | 0 |
+| Stock avant correction (`04-stock-avant-correction.log`) | 4 | 1 | 0 | 0 |
+| Stock après correction (`05-stock-apres-correction.log`) | 4 | 0 | 0 | 0 |
+| Suite complète corrigée (`06-validation-complete.log`) | 53 | 0 | 0 | 0 |
+
+Commandes de reproduction depuis la version corrigée :
+
+```bash
+./tester.sh -Dtest=StockJpaAdapterTest test
+./tester.sh -B -ntp clean test
+```
+
+Avec Java 21 et Maven configurés dans le `PATH`, les commandes équivalentes sont
+`mvn -Dtest=StockJpaAdapterTest test` et `mvn -B -ntp clean test`.
+La suite complète réunit les 42 cas hérités et les 11 nouveaux cas d'intégration :
+3 pour le catalogue, 4 pour le stock et 4 pour l'API.
+
+La démonstration locale a aussi été vérifiée sur le port **18080**, le port 8080
+étant occupé par une autre application. Le journal
+[`07-application-locale.log`](validation/tp3/07-application-locale.log) conserve
+le démarrage et l'arrêt gracieux avec `BUILD SUCCESS`. L'application a ensuite
+été arrêtée.
+Les conteneurs Testcontainers ont été nettoyés après cet arrêt.
+
+Le journal [`08-requetes-http.log`](validation/tp3/08-requetes-http.log) conserve
+les dix requêtes HTTP réelles :
+
+| Requête | Résultat observé |
+| --- | --- |
+| Recherche `ecran` sans accent | 200, produit `ECRA-04` trouvé |
+| Commande d'un clavier et de deux souris | 201, statut `CONFIRMEE`, total 690 DH et en-tête `Location` |
+| Stock des souris après commande | 200, stock 38 au lieu de 40 |
+| Commande de deux ordinateurs portables | 402, paiement refusé |
+| Stock des portables après refus | 200, stock restitué à 5 |
+| Produit en rupture | 409 |
+| Produit inconnu | 404 |
+| Quantité de 11 pour un produit | 422 |
+| Demande invalide | 400 |
+| Ligne de commande nulle | 400 |

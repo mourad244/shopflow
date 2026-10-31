@@ -1,0 +1,29 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< ma.shopflow:shopflow >------------------------
+[INFO] Building ShopFlow 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.10.0:list (default-cli) @ shopflow ---
+[INFO] 
+[INFO] The following files have been resolved:
+[INFO]    org.junit.jupiter:junit-jupiter:jar:6.0.3:test -- module org.junit.jupiter
+[INFO]    org.junit.jupiter:junit-jupiter-api:jar:6.0.3:test -- module org.junit.jupiter.api
+[INFO]    org.junit.jupiter:junit-jupiter-params:jar:6.0.3:test -- module org.junit.jupiter.params
+[INFO]    org.junit.jupiter:junit-jupiter-engine:jar:6.0.3:test -- module org.junit.jupiter.engine
+[INFO]    org.mockito:mockito-junit-jupiter:jar:5.23.0:test -- module org.mockito.junit.jupiter
+[INFO]    org.mockito:mockito-core:jar:5.23.0:test -- module org.mockito
+[INFO]    org.assertj:assertj-core:jar:3.27.7:test -- module org.assertj.core
+[INFO]    org.testcontainers:testcontainers:jar:2.0.5:test -- module testcontainers (auto)
+[INFO]    org.testcontainers:testcontainers-junit-jupiter:jar:2.0.5:test -- module testcontainers.junit.jupiter (auto)
+[INFO]    org.testcontainers:testcontainers-postgresql:jar:2.0.5:test -- module testcontainers.postgresql (auto)
+[INFO]    org.testcontainers:testcontainers-jdbc:jar:2.0.5:test -- module testcontainers.jdbc (auto)
+[INFO]    org.testcontainers:testcontainers-database-commons:jar:2.0.5:test -- module testcontainers.database.commons (auto)
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.743 s
+[INFO] Finished at: 2026-10-31T11:44:32+01:00
+[INFO] ------------------------------------------------------------------------

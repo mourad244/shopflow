@@ -1,4 +1,6 @@
-@baseUrl = http://localhost:8080
+# Démonstration locale : SERVER_PORT=18080 ./tester.sh spring-boot:test-run
+# Avec le port Spring Boot par défaut, remplacer 18080 par 8080.
+@baseUrl = http://localhost:18080
 
 ### Rechercher l'écran sans saisir son accent
 GET {{baseUrl}}/api/produits?q=ecran

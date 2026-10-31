@@ -1,0 +1,94 @@
+=== Recherche sans accents ===
+GET http://localhost:18080/api/produits?q=ecran
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 83
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+[{"reference":"ECRA-04","nom":"Écran 27 pouces","prixUnitaire":2490.00,"stock":8}]
+
+=== Commande clavier et deux souris ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 201 
+Location: /api/commandes/b552a869-f89e-4c5a-9cc7-df439e2c5602
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+{"id":"b552a869-f89e-4c5a-9cc7-df439e2c5602","statut":"CONFIRMEE","total":690.00,"referencePaiement":"PAY-C4A36748"}
+
+=== Stock des souris après commande ===
+GET http://localhost:18080/api/produits?q=souris
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 82
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+[{"reference":"SOUR-02","nom":"Souris sans fil","prixUnitaire":120.00,"stock":38}]
+
+=== Paiement au-dessus du plafond ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 402 
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+{"detail":"Paiement refusé : Plafond de la carte dépassé","instance":"/api/commandes","status":402,"title":"Payment Required"}
+
+=== Stock restitué après refus ===
+GET http://localhost:18080/api/produits?q=portable
+HTTP/1.1 200 
+Content-Type: application/json
+Content-Length: 96
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+[{"reference":"PORT-06","nom":"Ordinateur portable 14 pouces","prixUnitaire":8990.00,"stock":5}]
+
+=== Produit en rupture ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 409 
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+{"detail":"Produit indisponible : CASQ-05","instance":"/api/commandes","status":409,"title":"Conflict"}
+
+=== Produit inconnu ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 404 
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+{"detail":"Produit inconnu : INCONNU","instance":"/api/commandes","status":404,"title":"Not Found"}
+
+=== Quantité supérieure à dix ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 422 
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+
+{"detail":"Quantité maximale dépassée pour SOUR-02 (maximum 10)","instance":"/api/commandes","status":422,"title":"Unprocessable Content"}
+
+=== Demande invalide ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 400 
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+Connection: close
+
+{"detail":"Invalid request content.","instance":"/api/commandes","status":400,"title":"Bad Request"}
+
+=== Ligne nulle rejetée ===
+POST http://localhost:18080/api/commandes
+HTTP/1.1 400 
+Content-Type: application/problem+json
+Transfer-Encoding: chunked
+Date: Sat, 31 Oct 2026 10:43:53 GMT
+Connection: close
+
+{"detail":"Invalid request content.","instance":"/api/commandes","status":400,"title":"Bad Request"}
+
+VALIDATION REUSSIE : 10 requêtes HTTP, statuts, données métier et erreurs vérifiés.
