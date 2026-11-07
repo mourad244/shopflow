@@ -1,0 +1,534 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< ma.shopflow:shopflow >------------------------
+[INFO] Building ShopFlow 1.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ shopflow ---
+[INFO] Deleting /home/mourad/git_workspace/shopflow-tp4/target
+[INFO] 
+[INFO] --- dependency:3.10.0:properties (default) @ shopflow ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ shopflow ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ shopflow ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 40 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ shopflow ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ shopflow ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 17 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ shopflow ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running API des commandes
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+22:58:59 INFO  CommandeApiTest              : Starting CommandeApiTest using Java 21.0.9 with PID 270406 (started by mourad in /home/mourad/git_workspace/shopflow-tp4)
+22:58:59 INFO  CommandeApiTest              : No active profile set, falling back to 1 default profile: "default"
+22:59:00 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:59:00 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+22:59:02 INFO  PullPolicy                   : Image pull policy will be performed by: DefaultPullPolicy()
+22:59:02 INFO  ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+22:59:02 INFO  DockerClientFactory          : Testcontainers version: 2.0.5
+22:59:02 INFO  DockerClientProviderStrategy : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+22:59:03 INFO  DockerClientProviderStrategy : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+22:59:03 INFO  DockerClientFactory          : Docker host IP address is localhost
+22:59:03 INFO  DockerClientFactory          : Connected to docker: 
+  Server Version: 29.9.3
+  API Version: 1.56
+  Operating System: Ubuntu 24.04.5 LTS
+  Total Memory: 31794 MB
+22:59:03 INFO  0                            : Creating container for image: testcontainers/ryuk:0.14.0
+22:59:03 INFO  RegistryAuthLocator          : Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.14.0, configFile: /home/mourad/.docker/config.json, configEnv: DOCKER_AUTH_CONFIG). Falling back to docker-java default behaviour. Exception message: Status 404: No config supplied. Checked in order: /home/mourad/.docker/config.json (file not found), DOCKER_AUTH_CONFIG (not set)
+22:59:03 INFO  0                            : Container testcontainers/ryuk:0.14.0 is starting: 57dedae248a4854fae2e5a455633947e278b44e748b9db43cbb53c3b955e4e8d
+22:59:04 INFO  0                            : Container testcontainers/ryuk:0.14.0 started in PT0.887210644S
+22:59:04 INFO  RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+22:59:04 INFO  DockerClientFactory          : Checking the system...
+22:59:04 INFO  DockerClientFactory          : ✔︎ Docker server version should be at least 1.6.0
+22:59:04 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+22:59:04 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 4186f6125dc848865f649aad4819d421dc1473e0f5a2d01426a68842d1b3efa1
+22:59:06 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT2.137518602S
+22:59:06 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32785/test?loggerLevel=OFF)
+22:59:07 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32785/test?loggerLevel=OFF (PostgreSQL 17.11)
+22:59:07 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+22:59:07 INFO  DbValidate                   : Successfully validated 4 migrations (execution time 00:00.029s)
+22:59:07 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+22:59:07 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+22:59:07 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+22:59:07 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+22:59:07 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+22:59:07 INFO  DbMigrate                    : Migrating schema "public" to version "4 - codes promo"
+22:59:07 INFO  DbMigrate                    : Successfully applied 4 migrations to schema "public", now at version v4 (execution time 00:00.066s)
+22:59:08 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+22:59:08 INFO  core                         : HHH000001: Hibernate ORM core version 7.4.5.Final
+22:59:08 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+22:59:08 INFO  HikariDataSource             : HikariPool-1 - Starting...
+22:59:08 INFO  HikariPool                   : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@144caca6
+22:59:08 INFO  HikariDataSource             : HikariPool-1 - Start completed.
+22:59:08 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32785/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+22:59:09 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+22:59:09 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:59:09 INFO  QueryEnhancerFactories       : Hibernate is in classpath; If applicable, HQL parser will be used.
+22:59:11 INFO  SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+22:59:11 INFO  TestDispatcherServlet        : Initializing Servlet ''
+22:59:11 INFO  TestDispatcherServlet        : Completed initialization in 4 ms
+22:59:11 INFO  CommandeApiTest              : Started CommandeApiTest in 12.561 seconds (process running for 14.977)
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.43 s -- in API des commandes
+[INFO] Running API REST (REST Assured)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+22:59:13 INFO  ProduitApiTest               : Starting ProduitApiTest using Java 21.0.9 with PID 270406 (started by mourad in /home/mourad/git_workspace/shopflow-tp4)
+22:59:13 INFO  ProduitApiTest               : No active profile set, falling back to 1 default profile: "default"
+22:59:13 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:59:13 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+22:59:13 INFO  TomcatWebServer              : Tomcat initialized with port 0 (http)
+22:59:13 INFO  StandardService              : Starting service [Tomcat]
+22:59:13 INFO  StandardEngine               : Starting Servlet engine: [Apache Tomcat/11.0.24]
+22:59:13 INFO  pplicationContextInitializer : Root WebApplicationContext: initialization completed in 917 ms
+22:59:14 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+22:59:14 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: faa192a0eb082f444078245ec1a9ef43e49bbf43c0a7e4ddbd8efc3c98ec816e
+22:59:16 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT2.592090463S
+22:59:16 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32786/test?loggerLevel=OFF)
+22:59:16 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32786/test?loggerLevel=OFF (PostgreSQL 17.11)
+22:59:16 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+22:59:16 INFO  DbValidate                   : Successfully validated 4 migrations (execution time 00:00.012s)
+22:59:16 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+22:59:16 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+22:59:16 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+22:59:16 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+22:59:17 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+22:59:17 INFO  DbMigrate                    : Migrating schema "public" to version "4 - codes promo"
+22:59:17 INFO  DbMigrate                    : Successfully applied 4 migrations to schema "public", now at version v4 (execution time 00:00.054s)
+22:59:17 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+22:59:17 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+22:59:17 INFO  HikariDataSource             : HikariPool-2 - Starting...
+22:59:17 INFO  HikariPool                   : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5262b8a3
+22:59:17 INFO  HikariDataSource             : HikariPool-2 - Start completed.
+22:59:17 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32786/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+22:59:17 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+22:59:17 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:59:17 INFO  TomcatWebServer              : Tomcat started on port 35105 (http) with context path '/'
+22:59:17 INFO  ProduitApiTest               : Started ProduitApiTest in 4.784 seconds (process running for 20.932)
+22:59:19 INFO  [/]                          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:59:19 INFO  DispatcherServlet            : Initializing Servlet 'dispatcherServlet'
+22:59:19 INFO  DispatcherServlet            : Completed initialization in 1 ms
+22:59:20 INFO  NotificationJournal          : E-mail à salma@exemple.ma : votre commande 2c928f35-f378-4362-9fda-4f876c3611b4 de 89.97 DH est confirmée
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.896 s -- in API REST (REST Assured)
+[INFO] Running Code promo
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s -- in Code promo
+[INFO] Running Panier ShopFlow
+[INFO] Running R1 à R3 : ajout de produits
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in R1 à R3 : ajout de produits
+[INFO] Running R5 : frais de livraison
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in R5 : frais de livraison
+[INFO] Running R6 et R7 : remise et total
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in R6 et R7 : remise et total
+[INFO] Running R4 : sous-total
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in R4 : sous-total
+[INFO] Running R8 : code promo
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in R8 : code promo
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s -- in Panier ShopFlow
+[INFO] Running Points de fidélité
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in Points de fidélité
+[INFO] Running Catalogue PostgreSQL
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+22:59:21 INFO  ProduitJpaRepositoryTest     : Starting ProduitJpaRepositoryTest using Java 21.0.9 with PID 270406 (started by mourad in /home/mourad/git_workspace/shopflow-tp4)
+22:59:21 INFO  ProduitJpaRepositoryTest     : No active profile set, falling back to 1 default profile: "default"
+22:59:21 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:59:21 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+22:59:21 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+22:59:21 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 06a783c1a3fc155a490890802413d6e0477b57af98a965ee439e8dcc6bbb3daa
+22:59:22 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT1.751727096S
+22:59:22 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32787/test?loggerLevel=OFF)
+22:59:23 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32787/test?loggerLevel=OFF (PostgreSQL 17.11)
+22:59:23 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+22:59:23 INFO  DbValidate                   : Successfully validated 4 migrations (execution time 00:00.004s)
+22:59:23 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+22:59:23 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+22:59:23 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+22:59:23 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+22:59:23 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+22:59:23 INFO  DbMigrate                    : Migrating schema "public" to version "4 - codes promo"
+22:59:23 INFO  DbMigrate                    : Successfully applied 4 migrations to schema "public", now at version v4 (execution time 00:00.023s)
+22:59:23 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+22:59:23 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+22:59:23 INFO  HikariDataSource             : HikariPool-3 - Starting...
+22:59:23 INFO  HikariPool                   : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@22efbbdd
+22:59:23 INFO  HikariDataSource             : HikariPool-3 - Start completed.
+22:59:23 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32787/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+22:59:23 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+22:59:23 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:59:23 INFO  ProduitJpaRepositoryTest     : Started ProduitJpaRepositoryTest in 2.245 seconds (process running for 26.482)
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: insert into produit (nom,prix_unitaire,stock,reference) values (?,?,?,?)
+Hibernate: update produit set nom=?,prix_unitaire=?,stock=? where reference=?
+22:59:23 WARN  error                        : HHH000247: ErrorCode: 0, SQLState: 23514
+22:59:23 WARN  error                        : ERROR: new row for relation "produit" violates check constraint "produit_stock_check"
+  Detail: Failing row contains (TEST-99, Produit de test, 10.00, -1).
+Hibernate: select count(*) from produit pe1_0
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select * from produit
+where unaccent(lower(nom)) like unaccent(lower('%' || ? || '%'))
+order by nom
+
+Hibernate: select * from produit
+where unaccent(lower(nom)) like unaccent(lower('%' || ? || '%'))
+order by nom
+
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.389 s -- in Catalogue PostgreSQL
+[INFO] Running Stock PostgreSQL
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+22:59:23 INFO  StockJpaAdapterTest          : Starting StockJpaAdapterTest using Java 21.0.9 with PID 270406 (started by mourad in /home/mourad/git_workspace/shopflow-tp4)
+22:59:23 INFO  StockJpaAdapterTest          : No active profile set, falling back to 1 default profile: "default"
+22:59:23 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:59:23 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
+22:59:23 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+22:59:23 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 5ceebea430e29959771e4f5d914f402310f1d4130591a801150681d5b5b6e6da
+22:59:25 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT2.248949757S
+22:59:25 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32788/test?loggerLevel=OFF)
+22:59:25 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32788/test?loggerLevel=OFF (PostgreSQL 17.11)
+22:59:25 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+22:59:25 INFO  DbValidate                   : Successfully validated 4 migrations (execution time 00:00.006s)
+22:59:25 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+22:59:25 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+22:59:25 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+22:59:25 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+22:59:25 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+22:59:25 INFO  DbMigrate                    : Migrating schema "public" to version "4 - codes promo"
+22:59:26 INFO  DbMigrate                    : Successfully applied 4 migrations to schema "public", now at version v4 (execution time 00:00.028s)
+22:59:26 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+22:59:26 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+22:59:26 INFO  HikariDataSource             : HikariPool-4 - Starting...
+22:59:26 INFO  HikariPool                   : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@122bed0f
+22:59:26 INFO  HikariDataSource             : HikariPool-4 - Start completed.
+22:59:26 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32788/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+22:59:26 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+22:59:26 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:59:26 INFO  StockJpaAdapterTest          : Started StockJpaAdapterTest in 2.805 seconds (process running for 29.411)
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock+?) where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit set nom=?,prix_unitaire=?,stock=? where reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: update produit pe1_0 set stock=(pe1_0.stock-?) where pe1_0.reference=? and pe1_0.stock>=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select count(*) from produit pe1_0 where pe1_0.reference=?
+Hibernate: select pe1_0.reference,pe1_0.nom,pe1_0.prix_unitaire,pe1_0.stock from produit pe1_0 where pe1_0.reference=?
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.944 s -- in Stock PostgreSQL
+[INFO] Running Service de commande
+22:59:26 WARN  ServiceCommande              : E-mail non envoyé pour la commande 3c7ca665-864a-401a-aa4b-28f30f85eb17 : Serveur SMTP injoignable
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.274 s -- in Service de commande
+[INFO] Running ma.shopflow.acceptation.AcceptationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+22:59:26 INFO  CucumberSpringConfiguration  : Starting CucumberSpringConfiguration using Java 21.0.9 with PID 270406 (started by mourad in /home/mourad/git_workspace/shopflow-tp4)
+22:59:26 INFO  CucumberSpringConfiguration  : No active profile set, falling back to 1 default profile: "default"
+22:59:27 INFO  ositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:59:27 INFO  ositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 3 JPA repository interfaces.
+22:59:27 INFO  TomcatWebServer              : Tomcat initialized with port 0 (http)
+22:59:27 INFO  StandardService              : Starting service [Tomcat]
+22:59:27 INFO  StandardEngine               : Starting Servlet engine: [Apache Tomcat/11.0.24]
+22:59:27 INFO  pplicationContextInitializer : Root WebApplicationContext: initialization completed in 224 ms
+22:59:27 INFO  postgres:17-alpine           : Creating container for image: postgres:17-alpine
+22:59:27 INFO  postgres:17-alpine           : Container postgres:17-alpine is starting: 6921483dea3b37df6e1477d36fa0853233f1d5f40a70e1eff22714027b5bd4c9
+22:59:28 INFO  postgres:17-alpine           : Container postgres:17-alpine started in PT1.770213303S
+22:59:28 INFO  postgres:17-alpine           : Container is started (JDBC URL: jdbc:postgresql://localhost:32789/test?loggerLevel=OFF)
+22:59:28 INFO  FlywayExecutor               : Database: jdbc:postgresql://localhost:32789/test?loggerLevel=OFF (PostgreSQL 17.11)
+22:59:28 INFO  JdbcTableSchemaHistory       : Schema history table "public"."flyway_schema_history" does not exist yet
+22:59:28 INFO  DbValidate                   : Successfully validated 4 migrations (execution time 00:00.003s)
+22:59:28 INFO  JdbcTableSchemaHistory       : Creating Schema History table "public"."flyway_schema_history" ...
+22:59:28 INFO  DbMigrate                    : Current version of schema "public": << Empty Schema >>
+22:59:29 INFO  DbMigrate                    : Migrating schema "public" to version "1 - schema"
+22:59:29 INFO  DbMigrate                    : Migrating schema "public" to version "2 - catalogue initial"
+22:59:29 INFO  DbMigrate                    : Migrating schema "public" to version "3 - recherche sans accents"
+22:59:29 INFO  DbMigrate                    : Migrating schema "public" to version "4 - codes promo"
+22:59:29 INFO  DbMigrate                    : Successfully applied 4 migrations to schema "public", now at version v4 (execution time 00:00.026s)
+22:59:29 INFO  jpa                          : HHH008540: Processing PersistenceUnitInfo [name: default]
+22:59:29 INFO  SpringPersistenceUnitInfo    : No LoadTimeWeaver setup: ignoring JPA class transformer
+22:59:29 INFO  HikariDataSource             : HikariPool-5 - Starting...
+22:59:29 INFO  HikariPool                   : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@2f8b78f7
+22:59:29 INFO  HikariDataSource             : HikariPool-5 - Start completed.
+22:59:29 INFO  pooling                      : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:32789/test?loggerLevel=OFF]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+22:59:29 INFO  core                         : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+22:59:29 INFO  inerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:59:29 INFO  TomcatWebServer              : Tomcat started on port 33741 (http) with context path '/'
+22:59:29 INFO  CucumberSpringConfiguration  : Started CucumberSpringConfiguration in 2.362 seconds (process running for 32.457)
+
+Scénario: Un code valide réduit le sous-total # classpath:fonctionnalites/code_promo.feature:19
+  ✔ Étant donné les codes promo suivants :    # ma.shopflow.acceptation.EtapesCodePromo.lesCodesPromoSuivants(java.util.List)
+      | code        | remise | expire le  |
+      | BIENVENUE10 | 10     | 31/12/2026 |
+      | BLACKFRIDAY | 20     | 30/11/2026 |
+  ✔ Et je suis la cliente "amina@exemple.ma"  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Étant donné que nous sommes le 15/11/2026 # ma.shopflow.acceptation.EtapesCodePromo.nousSommesLe(java.time.LocalDate)
+  ✔ Quand j'ajoute 2 "SOUR-02" à mon panier   # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et j'utilise le code promo "BIENVENUE10"  # ma.shopflow.acceptation.EtapesCodePromo.jUtiliseLeCodePromo(java.lang.String)
+22:59:29 INFO  [/]                          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:59:29 INFO  DispatcherServlet            : Initializing Servlet 'dispatcherServlet'
+22:59:29 INFO  DispatcherServlet            : Completed initialization in 1 ms
+22:59:29 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande ec3077dd-91a9-4cef-b4f7-97e3290afdf2 de 246.00 DH est confirmée
+  ✔ Et je valide ma commande                  # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors ma commande est confirmée           # ma.shopflow.acceptation.EtapesCommande.maCommandeEstConfirmee()
+  ✔ Et le total payé est de 246,00 DH         # ma.shopflow.acceptation.EtapesCommande.leTotalPayeEst(java.math.BigDecimal)
+
+Scénario: Un code inconnu refuse la commande sans toucher au stock # classpath:fonctionnalites/code_promo.feature:27
+  ✔ Étant donné les codes promo suivants :                         # ma.shopflow.acceptation.EtapesCodePromo.lesCodesPromoSuivants(java.util.List)
+      | code        | remise | expire le  |
+      | BIENVENUE10 | 10     | 31/12/2026 |
+      | BLACKFRIDAY | 20     | 30/11/2026 |
+  ✔ Et je suis la cliente "amina@exemple.ma"                       # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Étant donné que nous sommes le 15/11/2026                      # ma.shopflow.acceptation.EtapesCodePromo.nousSommesLe(java.time.LocalDate)
+  ✔ Quand j'ajoute 2 "SOUR-02" à mon panier                        # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et j'utilise le code promo "NOEL50"                            # ma.shopflow.acceptation.EtapesCodePromo.jUtiliseLeCodePromo(java.lang.String)
+  ✔ Et je valide ma commande                                       # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors ma commande est refusée avec le code 422                 # ma.shopflow.acceptation.EtapesCommande.maCommandeEstRefusee(int)
+  ✔ Et le message d'erreur est "Code promo inconnu : NOEL50"       # ma.shopflow.acceptation.EtapesCommande.leMessageDErreurEst(java.lang.String)
+  ✔ Et il ne reste plus que 40 "SOUR-02" en stock                  # ma.shopflow.acceptation.EtapesCommande.ilNeRestePlusQue(int,java.lang.String)
+
+Plan du scénario: Le code BLACKFRIDAY est valable jusqu'au 30 novembre inclus # classpath:fonctionnalites/code_promo.feature:45
+  ✔ Étant donné les codes promo suivants :                                    # ma.shopflow.acceptation.EtapesCodePromo.lesCodesPromoSuivants(java.util.List)
+      | code        | remise | expire le  |
+      | BIENVENUE10 | 10     | 31/12/2026 |
+      | BLACKFRIDAY | 20     | 30/11/2026 |
+  ✔ Et je suis la cliente "amina@exemple.ma"                                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Étant donné que nous sommes le 29/11/2026                                 # ma.shopflow.acceptation.EtapesCodePromo.nousSommesLe(java.time.LocalDate)
+  ✔ Quand j'ajoute 1 "CLAV-01" à mon panier                                   # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et j'utilise le code promo "BLACKFRIDAY"                                  # ma.shopflow.acceptation.EtapesCodePromo.jUtiliseLeCodePromo(java.lang.String)
+22:59:29 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande 0915b28c-c3e0-42b9-955c-2965ff467808 de 390.00 DH est confirmée
+  ✔ Et je valide ma commande                                                  # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le code promo est accepté                                           # ma.shopflow.acceptation.EtapesCodePromo.leCodePromoEstAccepte()
+
+Plan du scénario: Le code BLACKFRIDAY est valable jusqu'au 30 novembre inclus # classpath:fonctionnalites/code_promo.feature:46
+  ✔ Étant donné les codes promo suivants :                                    # ma.shopflow.acceptation.EtapesCodePromo.lesCodesPromoSuivants(java.util.List)
+      | code        | remise | expire le  |
+      | BIENVENUE10 | 10     | 31/12/2026 |
+      | BLACKFRIDAY | 20     | 30/11/2026 |
+  ✔ Et je suis la cliente "amina@exemple.ma"                                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Étant donné que nous sommes le 30/11/2026                                 # ma.shopflow.acceptation.EtapesCodePromo.nousSommesLe(java.time.LocalDate)
+  ✔ Quand j'ajoute 1 "CLAV-01" à mon panier                                   # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et j'utilise le code promo "BLACKFRIDAY"                                  # ma.shopflow.acceptation.EtapesCodePromo.jUtiliseLeCodePromo(java.lang.String)
+22:59:29 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande f371a42f-32a8-43b2-90e3-57e990b4f69b de 390.00 DH est confirmée
+  ✔ Et je valide ma commande                                                  # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le code promo est accepté                                           # ma.shopflow.acceptation.EtapesCodePromo.leCodePromoEstAccepte()
+
+Plan du scénario: Le code BLACKFRIDAY est valable jusqu'au 30 novembre inclus # classpath:fonctionnalites/code_promo.feature:47
+  ✔ Étant donné les codes promo suivants :                                    # ma.shopflow.acceptation.EtapesCodePromo.lesCodesPromoSuivants(java.util.List)
+      | code        | remise | expire le  |
+      | BIENVENUE10 | 10     | 31/12/2026 |
+      | BLACKFRIDAY | 20     | 30/11/2026 |
+  ✔ Et je suis la cliente "amina@exemple.ma"                                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Étant donné que nous sommes le 01/12/2026                                 # ma.shopflow.acceptation.EtapesCodePromo.nousSommesLe(java.time.LocalDate)
+  ✔ Quand j'ajoute 1 "CLAV-01" à mon panier                                   # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et j'utilise le code promo "BLACKFRIDAY"                                  # ma.shopflow.acceptation.EtapesCodePromo.jUtiliseLeCodePromo(java.lang.String)
+  ✔ Et je valide ma commande                                                  # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le code promo est refusé                                            # ma.shopflow.acceptation.EtapesCodePromo.leCodePromoEstRefuse()
+
+Scénario: Une commande simple est confirmée et le stock diminue # classpath:fonctionnalites/commande.feature:10
+  ✔ Étant donné je suis la cliente "amina@exemple.ma"           # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Quand j'ajoute 2 "SOUR-02" à mon panier                     # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+22:59:29 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande 1689aa4f-519e-471e-b546-8182798316d8 de 270.00 DH est confirmée
+  ✔ Et je valide ma commande                                    # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors ma commande est confirmée                             # ma.shopflow.acceptation.EtapesCommande.maCommandeEstConfirmee()
+  ✔ Et le total payé est de 270,00 DH                           # ma.shopflow.acceptation.EtapesCommande.leTotalPayeEst(java.math.BigDecimal)
+  ✔ Et il ne reste plus que 38 "SOUR-02" en stock               # ma.shopflow.acceptation.EtapesCommande.ilNeRestePlusQue(int,java.lang.String)
+
+Scénario: Un produit en rupture bloque toute la commande        # classpath:fonctionnalites/commande.feature:17
+  ✔ Étant donné je suis la cliente "amina@exemple.ma"           # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Étant donné il reste 0 "CASQ-05" en stock                   # ma.shopflow.acceptation.EtapesCommande.ilResteEnStock(int,java.lang.String)
+  ✔ Quand j'ajoute 1 "SOUR-02" à mon panier                     # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et j'ajoute 1 "CASQ-05" à mon panier                        # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+  ✔ Et je valide ma commande                                    # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors ma commande est refusée avec le code 409              # ma.shopflow.acceptation.EtapesCommande.maCommandeEstRefusee(int)
+  ✔ Et le message d'erreur est "Produit indisponible : CASQ-05" # ma.shopflow.acceptation.EtapesCommande.leMessageDErreurEst(java.lang.String)
+  ✔ Et il ne reste plus que 40 "SOUR-02" en stock               # ma.shopflow.acceptation.EtapesCommande.ilNeRestePlusQue(int,java.lang.String)
+
+Plan du scénario: La livraison est offerte à partir de 500 DH d'achats # classpath:fonctionnalites/commande.feature:33
+  ✔ Étant donné je suis la cliente "amina@exemple.ma"                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Quand j'ajoute 1 "SOUR-02" à mon panier                            # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+22:59:29 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande ee26266e-f3e4-464e-b8b3-d6ec19418bbd de 150.00 DH est confirmée
+  ✔ Et je valide ma commande                                           # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le total payé est de 150,00 DH                               # ma.shopflow.acceptation.EtapesCommande.leTotalPayeEst(java.math.BigDecimal)
+
+Plan du scénario: La livraison est offerte à partir de 500 DH d'achats # classpath:fonctionnalites/commande.feature:34
+  ✔ Étant donné je suis la cliente "amina@exemple.ma"                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Quand j'ajoute 4 "SOUR-02" à mon panier                            # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+22:59:29 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande 3d3a53ba-b477-4f38-abe0-04551b78b0d4 de 510.00 DH est confirmée
+  ✔ Et je valide ma commande                                           # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le total payé est de 510,00 DH                               # ma.shopflow.acceptation.EtapesCommande.leTotalPayeEst(java.math.BigDecimal)
+
+Plan du scénario: La livraison est offerte à partir de 500 DH d'achats # classpath:fonctionnalites/commande.feature:35
+  ✔ Étant donné je suis la cliente "amina@exemple.ma"                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Quand j'ajoute 1 "CLAV-01" à mon panier                            # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+22:59:30 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande a85cb394-6883-464e-9e42-e65d43137578 de 480.00 DH est confirmée
+  ✔ Et je valide ma commande                                           # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le total payé est de 480,00 DH                               # ma.shopflow.acceptation.EtapesCommande.leTotalPayeEst(java.math.BigDecimal)
+
+Plan du scénario: La livraison est offerte à partir de 500 DH d'achats # classpath:fonctionnalites/commande.feature:36
+  ✔ Étant donné je suis la cliente "amina@exemple.ma"                  # ma.shopflow.acceptation.EtapesCommande.jeSuisLaCliente(java.lang.String)
+  ✔ Quand j'ajoute 2 "CLAV-01" à mon panier                            # ma.shopflow.acceptation.EtapesCommande.jAjouteAMonPanier(int,java.lang.String)
+22:59:30 INFO  NotificationJournal          : E-mail à amina@exemple.ma : votre commande 190b5373-8ddf-469a-a607-e2ff5edcc6e2 de 900.00 DH est confirmée
+  ✔ Et je valide ma commande                                           # ma.shopflow.acceptation.EtapesCommande.jeValideMaCommande()
+  ✔ Alors le total payé est de 900,00 DH                               # ma.shopflow.acceptation.EtapesCommande.leTotalPayeEst(java.math.BigDecimal)
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.606 s -- in ma.shopflow.acceptation.AcceptationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 68, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  43.986 s
+[INFO] Finished at: 2026-11-07T22:59:31+01:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+Extraits des exécutions Maven et Cucumber du TP4.
+
+API REST Assured
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+Étapes promo indéfinies
+The step 'les codes promo suivants :' and 2 other step(s) are undefined.
+The step 'les codes promo suivants :' and 3 other step(s) are undefined.
+[ERROR] Tests run: 11, Failures: 0, Errors: 5, Skipped: 0
+
+Table absente
+Caused by: org.postgresql.util.PSQLException: ERROR: relation "code_promo" does not exist
+ERROR: relation "code_promo" does not exist
+[ERROR] Tests run: 11, Failures: 0, Errors: 5, Skipped: 0
+
+Le code promo est ignoré par l’API
+expected: 246.00
+but was: 270.0
+Expected status code <422> but was <201>.
+[ERROR] Tests run: 11, Failures: 3, Errors: 0, Skipped: 0
+
+Expiration le 30 novembre
+✔ Étant donné que nous sommes le 30/11/2026                                 # ma.shopflow.acceptation.EtapesCodePromo.nousSommesLe(java.time.LocalDate)
+Expected status code <201> but was <422>.
+[ERROR] Tests run: 11, Failures: 1, Errors: 0, Skipped: 0
+
+Expérience de notation française dans une copie temporaire
+expected: 27000
+but was: 270.0

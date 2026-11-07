@@ -1,4 +1,4 @@
-# Fiche d'anomalies - TP1, TP2 et TP3 ShopFlow
+# Fiche d'anomalies - ShopFlow, du TP1 au TP4
 
 ## Anomalie 1 : livraison facturée à exactement 500 DH
 
@@ -276,3 +276,15 @@ les dix requêtes HTTP réelles :
 | Quantité de 11 pour un produit | 422 |
 | Demande invalide | 400 |
 | Ligne de commande nulle | 400 |
+
+## Anomalie 6 (TP4) — BLACKFRIDAY refusé le jour de son expiration
+
+Le code annonce une remise de 20 % valable jusqu’au 30 novembre 2026 inclus. Dans [le plan de scénario](src/test/resources/fonctionnalites/code_promo.feature), la cliente commande un clavier avec le même code à trois dates successives. Une horloge injectée fixe la date pour chaque exemple.
+
+| Date simulée | Statut attendu | Statut avant correction |
+| --- | --- | --- |
+| 29 novembre 2026 | 201 | 201 |
+| 30 novembre 2026 | 201 | 422 |
+| 1ᵉʳ décembre 2026 | 422 | 422 |
+
+Au commit `7f7419a`, la condition `!aujourdhui.isBefore(expireLe)` rejetait aussi le jour de l’expiration. Le 30 novembre était le seul des onze scénarios en échec. La condition `aujourdhui.isAfter(expireLe)` refuse la commande à partir du lendemain. Les [extraits des exécutions](validation/tp4/atdd.log) conservent le résultat observé à chaque étape.

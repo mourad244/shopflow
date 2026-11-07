@@ -23,7 +23,7 @@ public class ServiceCodesPromo {
         CodePromoEntity trouve = codes.findById(code)
                 .orElseThrow(() -> new CodePromoInvalideException("Code promo inconnu : " + code));
         LocalDate aujourdhui = LocalDate.now(horloge);
-        if (!aujourdhui.isBefore(trouve.getExpireLe())) {
+        if (aujourdhui.isAfter(trouve.getExpireLe())) {
             throw new CodePromoInvalideException("Code promo expiré : " + code);
         }
         return new CodePromo(trouve.getCode(), trouve.getPourcentage());
