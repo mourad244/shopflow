@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 
 /** Permet à un scénario de fixer la date vue par l'application. */
-public class HorlogeDeTest extends Clock {
+public class HorlogeReglable extends Clock {
 
     private static final ZoneId CASABLANCA = ZoneId.of("Africa/Casablanca");
     private volatile Instant maintenant = Instant.now();

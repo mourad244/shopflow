@@ -20,8 +20,8 @@ public class CucumberSpringConfiguration {
 
         @Bean
         @Primary
-        HorlogeDeTest horlogeDeTest() {
-            return new HorlogeDeTest();
+        HorlogeReglable horlogeReglable() {
+            return new HorlogeReglable();
         }
     }
 }

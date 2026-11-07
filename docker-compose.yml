@@ -1,5 +1,10 @@
 name: shopflow-tp5
 
+# Si un volume neuf reste bloqué et que _cluster/allocation/explain signale
+# disk_threshold malgré plusieurs Go libres, régler les seuils de ce TP une fois :
+# docker compose exec -T sonarqube curl -fsS -X PUT http://127.0.0.1:9001/_cluster/settings \
+#   -H 'Content-Type: application/json' \
+#   -d '{"persistent":{"cluster.routing.allocation.disk.watermark.low":"5gb","cluster.routing.allocation.disk.watermark.high":"3gb","cluster.routing.allocation.disk.watermark.flood_stage":"2gb"}}'
 services:
   sonarqube:
     image: sonarqube:26.9.0.129388-community
