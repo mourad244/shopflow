@@ -13,7 +13,8 @@ import jakarta.validation.constraints.NotNull;
 public record DemandeCommande(
         @NotBlank String clientId,
         @NotBlank @Email String email,
-        @NotEmpty List<@NotNull @Valid Ligne> lignes) {
+        @NotEmpty List<@NotNull @Valid Ligne> lignes,
+        String codePromo) {
 
     public record Ligne(@NotBlank String reference, @Min(1) int quantite) {
     }

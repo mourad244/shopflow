@@ -1,0 +1,31 @@
+package ma.shopflow.promo;
+
+import java.time.Clock;
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Service;
+
+import ma.shopflow.panier.CodePromo;
+
+/** Vérifie l'existence et la validité du code à la date de la commande. */
+@Service
+public class ServiceCodesPromo {
+
+    private final CodePromoJpaRepository codes;
+    private final Clock horloge;
+
+    public ServiceCodesPromo(CodePromoJpaRepository codes, Clock horloge) {
+        this.codes = codes;
+        this.horloge = horloge;
+    }
+
+    public CodePromo valider(String code) {
+        CodePromoEntity trouve = codes.findById(code)
+                .orElseThrow(() -> new CodePromoInvalideException("Code promo inconnu : " + code));
+        LocalDate aujourdhui = LocalDate.now(horloge);
+        if (!aujourdhui.isBefore(trouve.getExpireLe())) {
+            throw new CodePromoInvalideException("Code promo expiré : " + code);
+        }
+        return new CodePromo(trouve.getCode(), trouve.getPourcentage());
+    }
+}
