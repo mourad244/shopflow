@@ -1,4 +1,4 @@
-# Fiche d'anomalies - ShopFlow, du TP1 au TP4
+# Fiche d'anomalies - ShopFlow, du TP1 au TP5
 
 ## Anomalie 1 : livraison facturée à exactement 500 DH
 
@@ -288,3 +288,11 @@ Le code annonce une remise de 20 % valable jusqu’au 30 novembre 2026 inclus. D
 | 1ᵉʳ décembre 2026 | 422 | 422 |
 
 Au commit `7f7419a`, la condition `!aujourdhui.isBefore(expireLe)` rejetait aussi le jour de l’expiration. Le 30 novembre était le seul des onze scénarios en échec. La condition `aujourdhui.isAfter(expireLe)` refuse la commande à partir du lendemain. Les [extraits des exécutions](validation/tp4/atdd.log) conservent le résultat observé à chaque étape.
+
+## TP5 — Une panne d’e-mail peut passer inaperçue
+
+PIT a retiré l’appel à `LOG.log` dans `ServiceCommande.passerCommande`. Le test C6 a continué de passer, car il vérifie la confirmation de la commande et la conservation du stock réservé. Le journal aide l’exploitation à identifier les clients qui ne reçoivent pas leur confirmation. La suite du TP5 couvre la continuité de la commande et conserve cette limite explicite dans les [résultats de mutation](validation/tp5/resultats.md).
+
+## TP5 — L’horloge des scénarios signalée comme classe de test vide
+
+La première analyse SonarQube signalait `java:S2187` sur `HorlogeDeTest`, une horloge réglée par les scénarios Cucumber. Son nom la faisait reconnaître comme une classe de test. Le renommage en `HorlogeReglable` décrit son rôle et conserve son injection par Spring.

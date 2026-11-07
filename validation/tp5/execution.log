@@ -1,0 +1,26 @@
+Seuil initial, avant les cas supplémentaires
+[INFO] Tests run: 42, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0
+[WARNING] Rule violated for bundle shopflow: lines covered ratio is 0.93, but expected minimum is 0.95
+[WARNING] Rule violated for bundle shopflow: branches covered ratio is 0.88, but expected minimum is 0.90
+[INFO] BUILD FAILURE
+
+Tests unitaires seuls
+[INFO] Tests run: 47, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+
+Validation du projet corrigé
+[INFO] Tests run: 47, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0
+[INFO] All coverage checks have been met.
+[INFO] BUILD SUCCESS
+
+Mutation sur le domaine
+>> Line Coverage (for mutated classes only): 101/101 (100%)
+>> Generated 49 mutations Killed 48 (98%)
+>> Mutations with no coverage 0. Test strength 98%
+[INFO] BUILD SUCCESS
+
+SonarQube après correction
+[INFO] QUALITY GATE STATUS: PASSED - View details on http://localhost:19000/dashboard?id=shopflow
+[INFO] BUILD SUCCESS

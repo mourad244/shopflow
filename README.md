@@ -1,27 +1,33 @@
-# ShopFlow · TP4 — Tests d’acceptation
+# ShopFlow · TP5
 
-ShopFlow accepte un code promo facultatif sur `POST /api/commandes`. Le client peut utiliser le code jusqu’à sa date d’expiration incluse. La remise s’applique au sous-total des produits. Un code inconnu ou expiré entraîne une réponse HTTP 422 avant la réservation du stock et le paiement.
+ShopFlow vérifie les règles de commande, l’accès à PostgreSQL et les scénarios métier avec Maven et Java 21. La [fiche de stratégie](STRATEGIE.md) décrit les tests et les conditions de livraison. Le tag `tp5` complète l’historique des TP1 à TP4.
 
-## Exécuter les tests
+## Exécuter les tests et les mesures
 
-Avec Docker démarré, Java 21 et Maven, lancer les commandes depuis la racine du projet. Testcontainers démarre PostgreSQL et Spring Boot ouvre un port HTTP libre.
-
-| Commande | Tests exécutés |
+| Commande | Résultat |
 | --- | --- |
-| `./tester.sh -Dtest=ProduitApiTest test` | Catalogue, recherche sans accent, commande confirmée et produit inconnu avec REST Assured |
-| `./tester.sh -Dtest=AcceptationTest test` | Les 11 scénarios Gherkin, soit 6 pour la commande et 5 pour les codes promo |
-| `./tester.sh clean test` | La suite complète, y compris les tests des TP précédents |
+| `./tester.sh clean test` | Surefire lance les 47 tests unitaires. Docker peut être arrêté. |
+| `./tester.sh clean verify` | Surefire puis Failsafe exécutent 73 tests au total. Docker doit être démarré pour PostgreSQL. JaCoCo applique les seuils et génère `target/site/jacoco/index.html`. |
+| `./tester.sh test-compile org.pitest:pitest-maven:mutationCoverage` | PIT modifie le code du domaine et lance les tests unitaires concernés. Ouvrir `target/pit-reports/index.html`. |
 
-`mvn` peut remplacer `./tester.sh`. Sur le poste de travail utilisé pour ce projet, le script retrouve aussi Java et Maven dans l’installation IntelliJ.
+`mvn` peut remplacer `./tester.sh`. Les cinq classes d’intégration et d’acceptation se terminent par `IT`. Failsafe génère le rapport Cucumber dans `target/cucumber/rapport.html`.
 
-Le [dernier lancement complet](validation/tp4/suite-complete.log) a exécuté **68 tests** avec zéro échec, erreur ou test ignoré. Les 53 tests du TP3 sont complétés par 4 tests REST Assured et 11 scénarios Cucumber.
+## Analyser avec SonarQube
 
-## Lire les scénarios et le rapport
+1. Démarrer le service avec `docker compose up -d`. Le projet utilise le port **19000** sur la boucle locale, le port 9000 étant déjà occupé sur le poste.
+2. Ouvrir [le serveur SonarQube](http://localhost:19000), terminer la configuration administrateur et générer un jeton d’analyse pour le projet `shopflow`.
+3. Depuis Bash, saisir le jeton dans une invite masquée, lancer l’analyse puis effacer la variable.
 
-Les exemples métier sont dans [commande.feature](src/test/resources/fonctionnalites/commande.feature) et [code_promo.feature](src/test/resources/fonctionnalites/code_promo.feature). Pour deux souris à 120 DH avec `BIENVENUE10`, le total attendu est de **246 DH** (240 DH − 24 DH + 30 DH de livraison). Les exemples `BLACKFRIDAY` fixent l’horloge au 29 novembre, au 30 novembre et au 1ᵉʳ décembre 2026 pour vérifier les deux côtés de la date limite.
+```bash
+read -rs -p 'Jeton SonarQube : ' SONAR_TOKEN && echo
+SONAR_TOKEN="$SONAR_TOKEN" ./tester.sh clean verify sonar:sonar -Dsonar.qualitygate.wait=true
+unset SONAR_TOKEN
+```
 
-Le [rapport HTML de la remise](rapport.html) présente chaque étape en français. Un lancement de `AcceptationTest` régénère `target/cucumber/rapport.html` et `target/cucumber/rapport.json`.
+Le [tableau de bord local](http://localhost:19000/dashboard?id=shopflow) affiche le Quality Gate et les mesures. Une [capture du tableau de bord](validation/tp5/sonarqube.png) est incluse pour la remise.
 
-## Versions précédentes
+## Remise
 
-Les tags `tp1`, `tp2`, `tp3` et `tp4` conservent la progression du projet. La commande `git show tp3:README.md` affiche les instructions du TP3. La [fiche d’anomalies](ANOMALIES.md) décrit les défauts observés depuis le TP1.
+- [Pipeline GitHub Actions](https://github.com/mourad244/shopflow/actions/workflows/ci.yml). Le premier job teste les règles métier. Le second exécute la suite complète et publie les artefacts `couverture-jacoco` et `rapport-cucumber`.
+- [Rapports du tag tp5](https://github.com/mourad244/shopflow/releases/tag/tp5). Télécharger et extraire l’archive pour consulter les rapports HTML JaCoCo, PIT et Cucumber.
+- [Résultats des vérifications](validation/tp5/resultats.md) et [fiche d’anomalies](ANOMALIES.md).
