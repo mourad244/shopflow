@@ -16,5 +16,5 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
         value = "pretty,html:target/cucumber/rapport.html,json:target/cucumber/rapport.json")
 @ConfigurationParameter(key = JUNIT_PLATFORM_NAMING_STRATEGY_PROPERTY_NAME, value = "long")
-public class AcceptationTest {
+public class AcceptationIT {
 }
